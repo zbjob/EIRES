@@ -1,0 +1,41 @@
+
+TYPE Bike{
+    timestamp,
+    end_time,
+    duration_sec,
+    start_station_id,
+    end_station_id,
+    bike_id,
+    event_id,
+    user_type,
+    user_birth,
+    user_gender
+};
+
+
+
+TYPE Return3{
+    timestamp,
+    a1,
+    a2,
+    a3
+};
+
+QUERY P1
+EVENT SEQ(Bike a, Bike b, Bike c, Bike d, Bike e)
+WHERE [bike_id] && a.end_station_id == b.start_station_id && b.end_station_id == c.start_station_id && c.end_station_id == d.start_station_id && d.end_station_id == e.start_station_id 
+WITHIN 1h 
+RETURN Return3( a.timestamp, a.start_station_id,  a.end_station_id, a.bike_id, b.timestamp,  b.end_station_id, c.timestamp, c.end_station_id, d.timestamp, d.end_station_id, e.timestamp, e.end_station_id);
+
+QUERY P2
+EVENT SEQ(Bike a, Bike b, Bike c, Bike d, Bike e)
+WHERE [bike_id] && a.end_station_id == b.start_station_id && b.end_station_id == c.start_station_id && c.end_station_id == d.start_station_id && d.end_station_id == e.start_station_id 
+WITHIN 2h 
+RETURN Return3( a.timestamp, a.start_station_id,  a.end_station_id, a.bike_id, b.timestamp,  b.end_station_id, c.timestamp, c.end_station_id, d.timestamp, d.end_station_id, e.timestamp, e.end_station_id);
+
+QUERY P3
+EVENT SEQ(Bike a, Bike b, Bike c, Bike d, Bike e, Bike f, Bike g, Bike h, Bike k, Bike l)
+WHERE [bike_id] && a.end_station_id == b.start_station_id && b.end_station_id == c.start_station_id && c.end_station_id == d.start_station_id && d.end_station_id == e.start_station_id  && e.end_station_id == f.start_station_id && f.end_station_id == g.start_station_id && g.end_station_id == h.start_station_id && h.end_station_id == k.start_station_id && k.end_station_id == l.start_station_id 
+WITHIN 90m 
+RETURN Return3( a.timestamp, a.start_station_id,  a.end_station_id, a.bike_id, b.timestamp,  b.end_station_id, c.timestamp, c.end_station_id, d.timestamp, d.end_station_id, e.timestamp, e.end_station_id);
+

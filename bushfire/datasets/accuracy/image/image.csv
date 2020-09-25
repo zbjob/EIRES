@@ -1,0 +1,9 @@
+Threshold,Type,Precision,Recall,Dataset,F1
+50,Fires,92.18,94.29,County,93.22306215
+80,Fires,94.32,93.14,County,93.72628614
+50,Fires,90.77,93.74,Camp,92.23109642
+80,Fires,95.37,91.13,Camp,93.20180268
+50,Fires,92.11,93.12,Woolsey,92.6122464
+80,Fires,93.58,92.99,Woolsey,93.28406711
+50,Fires,91.32,94.18,Kincade,92.72795256
+80,Fires,94.21,92.6,Kincade,93.3980622

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{45d41acc-2c3c-43d2-bc10-02aa73ffc7c7}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\eql.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\EventStream.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\PatternMatcher.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Query.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\RingBuffer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Aggregation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MonitorThread.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MurmurHash3.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)OutofOrderPatternMatcher.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)PredicateMiner.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\default.eql" />
+    <None Include="$(MSBuildThisFileDirectory)..\eql.l" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\lex.yy.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\PatternMatcher.cpp">
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\Query.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MonitorThread.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MurmurHash3.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)OutofOrderPatternMatcher.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)PredicateMiner.cpp" />
+  </ItemGroup>
+</Project>

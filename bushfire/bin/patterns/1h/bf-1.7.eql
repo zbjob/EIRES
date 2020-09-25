@@ -1,0 +1,19 @@
+TYPE Satellite {
+    time,
+    channelID,
+    level,
+    boundary
+};
+
+QUERY fail3
+EVENT SEQ(Satellite c01,Satellite c07)
+WHERE c01.boundary /\ c07.boundary
+    && c01.channelID == 0 
+    && c07.channelID == 6
+    && c01.time == c07.time 
+    && c01.level == 2 && c07.level == 2
+WITHIN 1h
+RETURN Fire(c01.time,c01.channelID,c01.level,
+    INTERSECT(c01.boundary,c07.boundary),
+    c07.time,c07.channelID,c07.level
+);

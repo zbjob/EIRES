@@ -1,0 +1,65 @@
+c01
+c02
+c02
+c06
+c01
+c07MinusC14
+c01
+c02
+c06
+c07MinusC14
+c01
+c02
+c02
+c06
+c02
+c07MinusC14
+c01
+c02
+c07MinusC14
+c06
+c01
+c01
+c01
+c02
+c02
+c02
+c01
+c02
+c07MinusC14
+c07MinusC14
+c07MinusC14
+c07MinusC14
+event stream queue is empty now!
+perform 0loadshedding
+eventCn 769
+#full Match 0
+#high latecny (> 150)0
+#NumPartialMatch 96
+#NumDropedPM 0
+#NumDropedInputEvents 0
+expression size: 0
+
+
+
+********   Event Pattern    ********
+TYPE Satellite {
+    time,
+    channelID,
+    level,
+    boundary
+};
+
+QUERY fail3
+EVENT SEQ(Satellite c01,Satellite c02,Satellite c06,Satellite c07MinusC14)
+WHERE c01.boundary /\ c02.boundary && c02.boundary /\ c06.boundary && c01.boundary /\ c07MinusC14.boundary
+    && c01.channelID == 0 && c02.channelID == 1 
+    && c06.channelID == 2 && c07MinusC14.channelID == 3
+    && c01.time == c02.time && c02.time == c06.time && c02.time == c07MinusC14.time 
+    && c01.level == 2 && c02.level == 2 && c07MinusC14.level == 2 && c06.level == 2
+WITHIN 1h
+RETURN Fire(c01.time,c01.channelID,c01.level,
+    c02.time,c02.channelID,c02.level,
+    INTERSECT(c01.boundary,c02.boundary,c07MinusC14.boundary),
+    c07MinusC14.time,c07MinusC14.channelID,c07MinusC14.level
+);

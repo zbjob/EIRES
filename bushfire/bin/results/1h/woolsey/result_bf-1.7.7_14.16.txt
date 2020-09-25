@@ -1,0 +1,39 @@
+﻿c01
+c07MinusC14
+c01
+c16
+c07
+c07MinusC14
+c01
+c07
+c07MinusC14
+c16
+c01
+c07MinusC14
+c16
+c07
+c01
+c01
+c01
+c07MinusC14
+c07MinusC14
+c07MinusC14
+c07
+c07
+c07
+c01
+c07
+c07MinusC14
+c16
+c16
+c16
+c16
+event stream queue is empty now!
+perform 0loadshedding
+eventCn 890
+#full Match 0
+#high latecny (> 150)0
+#NumPartialMatch 19
+#NumDropedPM 0
+#NumDropedInputEvents 0
+expression size: 0

@@ -1,0 +1,15 @@
+TYPE Satellite {
+    time,
+    channelID,
+    level,
+    boundary
+};
+
+QUERY fail3
+EVENT SEQ(Satellite c07)
+WHERE c07.channelID == 6 
+    && c07.level == 2
+WITHIN 1h
+RETURN Fire(c07.time,c07.channelID,c07.level,
+    c07.boundary
+);

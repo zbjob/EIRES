@@ -1,0 +1,21 @@
+TYPE Satellite {
+    time,
+    channelID,
+    level,
+    boundary,
+    humidity,
+    temperature
+};
+
+QUERY bushfireNight
+EVENT SEQ(Satellite c06,Satellite c16)
+WHERE [boundary]
+    && c06.channelID == 2 && c06.level == 2 
+    && c16.channelID == 5 && c16.level == 2
+    && c16.temperature >= 46.51
+    && c16.humidity <= 23.38
+WITHIN 2h
+RETURN Fire(c06.time,c06.channelID,c06.level,
+    INTERSECT(c06.boundary,c16.boundary),
+    c16.time,c16.channelID,c16.level,c16.temperature,c16.humidity
+);

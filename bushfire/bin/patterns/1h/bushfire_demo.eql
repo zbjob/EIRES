@@ -1,0 +1,33 @@
+TYPE Channel {
+    time,
+    channelID,
+	level,
+    boundary
+};
+
+TYPE Landcover {
+    time,
+    category,
+    boundary
+}
+
+TYPE Weather {
+    time,
+    category,
+    value,
+    boundary
+}
+
+QUERY bushfire
+EVENT SEQ(Channel c01, Channel c02, Channel c06, Channel c07minusC14, Landcover lc, Weather temp,Weather humi, Weather pre)
+WHERE c01.channelID == C01 && c02.channelID == C02 && c06.channelID == C06 && c07minusC14.channelID == C07_minus_C14
+    && temp.category == temperature && humi.category == humidity && pre.category == pressure
+    && c01.level == high && c02.level == high && c06.level == high && c07minusC14 == high
+    && temp.value > 60  && humi.value < 20 && pre.value > 1000
+    && lc.category IN {forest,shrub,grasslands,croplands}
+    && INTERSECT[boundary]
+WITHIN 1h
+RETURN Fire(INTERSECT[boundary]);
+
+
+

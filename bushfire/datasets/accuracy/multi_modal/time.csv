@@ -1,0 +1,9 @@
+Time,Type,Precision,Recall,Dataset,F1
+With,Fires,94.32,93.14,County,93.72628614
+Without,Fires,92.32,91.22,County,91.76670372
+With,Fires,95.37,91.13,Camp,93.20180268
+Without,Fires,93.82,90.89,Camp,92.33176114
+With,Fires,93.58,92.64,Woolsey,93.10762754
+Without,Fires,92.37,92.19,Woolsey,92.27991222
+With,Fires,94.21,92.6,Kincade,93.3980622
+Without,Fires,94.2,90.8,Kincade,92.46875676

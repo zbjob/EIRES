@@ -1,0 +1,101 @@
+c01
+c07MinusC14
+c01
+c16
+c07
+c07MinusC14
+c01
+c07
+c07MinusC14
+c16
+c01
+c07MinusC14
+c07MinusC14
+c16
+c01
+c07
+c01
+c07MinusC14
+c16
+c07
+c01
+c01
+c01
+c07MinusC14
+c07MinusC14
+c07MinusC14
+c07
+c07
+c07
+c01
+c07
+c07MinusC14
+c16
+c16
+c16
+c16
+event stream queue is empty now!
+perform 0loadshedding
+eventCn 1029
+#full Match 0
+#high latecny (> 150)0
+#NumPartialMatch 32
+#NumDropedPM 0
+#NumDropedInputEvents 0
+expression size: 0
+--where--
+event1 : 0 attr1: 3
+event2 : 2 attr2: 3
+op: 4 offset: 0
+--where--
+event1 : 0 attr1: 3
+event2 : 3 attr2: 3
+op: 4 offset: 0
+--where--
+event1 : 1 attr1: 3
+event2 : 2 attr2: 3
+op: 4 offset: 0
+--where--
+event1 : 0 attr1: 1
+event2 : 0 attr2: 28
+op: 4 offset: 0
+--where--
+event1 : 1 attr1: 1
+event2 : 1 attr2: 28
+op: 4 offset: 6
+--where--
+event1 : 2 attr1: 1
+event2 : 2 attr2: 28
+op: 4 offset: 3
+--where--
+event1 : 3 attr1: 1
+event2 : 3 attr2: 28
+op: 4 offset: 5
+--where--
+event1 : 0 attr1: 0
+event2 : 2 attr2: 0
+op: 4 offset: 0
+--where--
+event1 : 2 attr1: 0
+event2 : 3 attr2: 0
+op: 4 offset: 0
+--where--
+event1 : 0 attr1: 0
+event2 : 1 attr2: 0
+op: 4 offset: 0
+--where--
+event1 : 0 attr1: 2
+event2 : 0 attr2: 28
+op: 4 offset: 2
+--where--
+event1 : 2 attr1: 2
+event2 : 2 attr2: 28
+op: 4 offset: 2
+--where--
+event1 : 3 attr1: 2
+event2 : 3 attr2: 28
+op: 4 offset: 2
+--where--
+event1 : 1 attr1: 2
+event2 : 1 attr2: 28
+op: 4 offset: 2

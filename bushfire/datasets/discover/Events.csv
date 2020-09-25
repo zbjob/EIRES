@@ -1,0 +1,25 @@
+Day,Time,x,y,C01,C02,C06,C07_minus_C14,C07_anomaly,landcover,temperature,humidity,pressure,label
+8,201811082000,166,133,high,high,high,high,,,,,,
+9,201811092000,50,210,high,high,normal,normal,,,,,,
+8,201811081600,130,142,low,normal,normal,high,,,,,,
+10,201811101800,150,180,high,high,high,high,,,,,,
+10,201811102200,150,190,high,high,high,normal,,,,,,
+11,201811110000,160,160,high,high,high,normal,,,,,,
+11,201811111500,166,150,high,high,high,normal,,,,,,
+8,201811081800,168,130,high,high,high,high,,,,,,
+9,201811092300,25,280,high,high,normal,low,,,,,,
+9,201811091800,130,140,low,normal,low,normal,,,,,,
+9,201811092100,182,208,normal,normal,normal,normal,,,,,,
+9,201811092100,50,210,high,high,normal,normal,,,,,,
+9,201811092200,86,242,high,high,normal,normal,,,,,,
+9,201811091900,38,175,high,high,normal,normal,,,,,,
+8,201811082100,163,128,high,high,high,high,,,,,,1
+8,201811082300,167,130,high,high,high,high,,,,,,
+8,201811081900,70,210,high,high,normal,normal,,,,,,
+8,201811080000,147,187,high,high,high,normal,,,,,,1
+8,201811081600,131,146,normal,normal,low ,high,,,,,,1
+8,201811081800,170,130,high,high,high,high,,,,,,1
+8,201811081800,246,50,low,low ,low ,low,,,,,,0
+8,201811082100,170,130,high,high,high,high,,,,,,1
+9,201811090000,165,131,high,high,high,high,,,,,,1
+9,201811090000,275,135,low,low ,low ,low,,,,,,0

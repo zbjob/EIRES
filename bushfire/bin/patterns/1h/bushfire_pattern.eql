@@ -1,0 +1,16 @@
+TYPE Satellite {
+    time,
+    channelID,
+    boundary,
+	level
+};
+
+QUERY bushfire
+EVENT SEQ(Satellite c01,Satellite c02,Satellite c06, Satellite c07MinusC14, Satellite c14, Satellite c16)
+WHERE c01.channelID == 0 && c02.channelID == 1 && c06.channelID == 2 
+    && c07MinusC14.channelID == 3 && c14.channelID == 4 && c16.channelID == 5
+    && c01.level == 2 && c02.level == 0 && c06.level == 2 
+    && c07MinusC14.level == 2 && c14.level == 2 && c16.level == 2
+    && COMMOM([boundary])
+WITHIN 1h
+RETURN Fire(INTERSECT([boundary]));
