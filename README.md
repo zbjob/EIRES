@@ -4,4 +4,6 @@ EIRES: Efficient Integration of Remote Data in Event Stream Processing
 ## Code
 ## Data
 ## Run scripts
-## Postanalysis scripts 
+## Post Analysis scripts
+5th, 25th, 50th, 75th, 95th percentiles latency
+
