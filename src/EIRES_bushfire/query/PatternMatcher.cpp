@@ -167,13 +167,13 @@ void PatternMatcher::Transition::testCondition(const Condition& _condition, cons
 		for (auto it = range.first; it != range.second; ++it)
 		{
 			uint32_t runIdx = (uint32_t)(it->second - _state.firstMatchId);
-            if(_state.ID == 1 && false) 
-            {
-                cout << "it->second " << it->second << endl;
-                cout << "_state.firstMatchId: " << _state.firstMatchId << endl;
-                cout << "_state.buffer.size: " << _state.attr[0].size() << endl;
-                cout << "runIdx: " << runIdx << endl;
-            }
+            //if(_state.ID == 1 && false) 
+            //{
+            //    cout << "it->second " << it->second << endl;
+            //    cout << "_state.firstMatchId: " << _state.firstMatchId << endl;
+            //    cout << "_state.buffer.size: " << _state.attr[0].size() << endl;
+            //    cout << "runIdx: " << runIdx << endl;
+            //}
 			if (runIdx < _state.count && runIdx >= _runOffset && _state.runValid(runIdx))
 			{
 				_callback(runIdx);
