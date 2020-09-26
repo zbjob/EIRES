@@ -1,0 +1,31 @@
+
+TYPE GFail {
+	timestamp,
+	id,
+	taskid
+};
+
+TYPE GSubmit {
+	timestamp,
+	id,
+	taskid
+};
+
+TYPE GKill {
+	timestamp,
+	id,
+	taskid
+};
+
+TYPE GFail3 {
+	timestamp,
+	f1,
+	f2,
+	f3
+};
+
+QUERY fail3
+EVENT SEQ(GFail f1, GFail f2, ~GKill k, GFail f3)
+WHERE [taskid]
+WITHIN 60s
+RETURN GFail3(f1.timestamp, f1.id, f2.id, f3.id);
