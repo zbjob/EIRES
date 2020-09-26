@@ -272,6 +272,7 @@ public:
         static int fetch_latency;
         static bool FLAG_delay_fetch;
         static bool FLAG_prefetch; 
+        static bool FLAG_baseline; 
 
 		void updateHandler(const State& _from, const State& _to);
 		void setCustomExecuteHandler(std::function<void(State&, State&, uint32_t, const attr_e*)> _handler);

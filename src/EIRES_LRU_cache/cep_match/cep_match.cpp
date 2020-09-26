@@ -61,6 +61,7 @@ bool PatternMatcher::Transition::FLAG_greedy= false;
 int PatternMatcher::Transition::fetch_latency = 1;
 bool PatternMatcher::Transition::FLAG_delay_fetch = false;
 bool PatternMatcher::Transition::FLAG_prefetch = false;
+bool PatternMatcher::Transition::FLAG_BL = false;
 int FetchWorker::fetch_latency = 1;
 
 inline void init_utime() 
@@ -219,7 +220,7 @@ public:
         int ToShedCnt = _quota;
         
         while(ToShedCnt > 0 && !RawEventQueue.empty())
-        {
+         {
             int dice_roll = m_distribution(m_generator);
             if(dice_roll <= 50)
             {
@@ -1564,7 +1565,7 @@ int main(int _argc, char* _argv[])
     uint64_t cacheSize;
 
 	int c;
-	while ((c = _free_getopt(_argc, _argv, "F:c:q:p:m:n:r:D:T:f:C:Z:X:Y:L:u:tsIPRGMVOABaohzg")) != -1)
+	while ((c = _free_getopt(_argc, _argv, "F:c:q:p:m:n:r:D:T:f:C:Z:X:Y:L:u:tsIPRGMVOABbaohzg")) != -1)
 	{
 		switch (c)
 		{
@@ -1612,6 +1613,9 @@ int main(int _argc, char* _argv[])
                 break;
             case 'g':
                 PatternMatcher::Transition::FLAG_greedy = true;
+                break;
+            case 'b':
+                PatternMatcher::Transition::FLAG_BL = true;
                 break;
             case 'L':
                 PatternMatcher::Transition::fetch_latency = stoi(string(_free_optarg));

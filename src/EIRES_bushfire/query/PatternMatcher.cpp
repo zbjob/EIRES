@@ -617,7 +617,7 @@ bool PatternMatcher::Transition::executeTransition(State & _from, State & _to, u
             cachePld_t payload;
             bool cacheHitFlag = _to.m_Cache->lookUp(key, payload); 
 
-            if(cacheHitFlag) 
+            if(!FLAG_baseline && cacheHitFlag) 
             {
                 ++(_to.m_Cache->cacheHit);
                 if(!(payload.temperature >= temperature  && payload.humidity < humidity)) 

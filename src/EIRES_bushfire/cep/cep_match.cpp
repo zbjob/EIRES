@@ -46,6 +46,7 @@ int PatternMatcher::Transition::fetchProbability= 100;
 int PatternMatcher::Transition::fetch_latency = 10;
 bool PatternMatcher::Transition::FLAG_prefetch= false;
 bool PatternMatcher::Transition::FLAG_delay_fetch = false;
+bool PatternMatcher::Transition::FLAG_baseline = false;
 int FetchWorker::fetch_latency = 1;
 
 default_random_engine m_generator;
@@ -800,22 +801,16 @@ int main(int _argc, char* _argv[])
             
 
     int timeSlice = 1;
-    //string streamFile = "/home/bo/CEP_load_shedding/data/bike_sharing/bike_sharing_cleaned.csv";
-    // string streamFile = "../datasets/Stream_SatelliteEvents_Polygon.csv";
     string streamFile = "../datasets/streams/Full_Stream_Events_day_8to11FullThreshold_Polygon.csv";
 
 
-    // string streamFile = "../../../data/Data/CEP_load_shedding-master/data/bike_sharing/newTmp.csv";
-    // string streamFile = "../../../CEP_load_shedding-master/data/bike_sharing/4.csv";
-    // string streamFile = "../../../CEP_load_shedding-master/data/bike_sharing/201801-fordgobike-tripdata.csv";
-    string PMKeepingkeysFile = "../../../CEP_load_shedding-master/data/bike_sharing/PM_keys_3TTL_1h_g10.csv";
 
     int num_fetchWoker = 3;
     uint64_t cacheSize = 1000;
     string suffix = "none";
 
 	int c;
-	while ((c = _free_getopt(_argc, _argv, "f:c:q:p:m:T:w:x:y:z:n:F:Z:L:C:tsIAB")) != -1)
+	while ((c = _free_getopt(_argc, _argv, "f:c:q:p:m:T:w:x:y:z:n:F:Z:L:C:tsIABb")) != -1)
 	{
 		switch (c)
 		{
@@ -884,6 +879,9 @@ int main(int _argc, char* _argv[])
         case 'B':
             PatternMatcher::Transition::FLAG_delay_fetch = true;
             break;
+        case 'b':
+            PatternMatcher::Transition::FLAG_baseline = true;
+            break;
         default:
             abort();
 		}
@@ -918,12 +916,6 @@ int main(int _argc, char* _argv[])
     
     prog.m_Matcher.setTimeWindow();
     prog.m_Matcher.setTimeSliceNum(timeSlice);
-    //cout << "[main] flag 1 " << endl;
-    if(SheddingIrrelevantFlag)
-    {
-        prog.readPMKeepBookings(PMKeepingkeysFile);
-        prog.m_Matcher.m_States[1].PMBooks[0].erase(448);
-    }
 
     prog.readEventStreamFromFiles(streamFile);
 

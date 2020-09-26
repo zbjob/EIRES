@@ -342,6 +342,7 @@ public:
         static int fetch_latency;
         static bool FLAG_delay_fetch;
         static bool FLAG_prefetch;
+        static bool FLAG_BL;
 
         uint64_t pack(const uint32_t& lhs, const uint32_t& rhs)
         {

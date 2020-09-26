@@ -1051,7 +1051,7 @@ void PatternMatcher::Transition::executeTransition(State & _from, State & _to, i
             uint64_t eventParam = attributes[_to.m_externalComIdx];
             uint64_t payload = _to.m_Cache->lookUp(key); 
 
-            if(payload) 
+            if(!FLAG_BL && payload) 
             {
                 ++(_to.m_Cache->cacheHit);
                 if(FLAG_greedy && payload != eventParam) 
