@@ -66,6 +66,7 @@ To leverage GOES-16 satellite, we need pre-processing and generate event streams
 ![alt text][h]
 
 Following figures are some visualized results. 
+
 [h]: figs/8.png ""
 
 ![alt text][i]
