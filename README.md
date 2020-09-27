@@ -15,13 +15,24 @@ Source code is in `src`. Separate directories are built for synthetic data, bush
 Parameters meaning are listed as below:
 | parameter      | semantic        |
 | :------------- | :--------------:|
-| -c | query workload file         |
-| -q | specific query name         |
-| -n | fething-cache policy        |
-| -g | set greedy selection        |
-| -b | configure CEP engine as baseline 1|
-| -A | configure perfetch (PFetch) to CEP engine      |
-| -B | configure lazy evlaution (LzEval) to CEP engine|
+| -c | query workload file |
+| -q | specific query name |
+| -F | stream source file |
+| -g | set greedy selection |
+| -b | configure CEP engine as baseline 1 |
+| -A | configure perfetch (PFetch) to CEP engine |
+| -B | configure lazy evlaution (LzEval) to CEP engine |
+| -D | the number of events to process |
+| -C | cache capacity |
+| -f | number of fetch worker threads |
+| -L | transmission latency |
+| -u | utility updating frequency |
+| -X | utility estimation noise |
+| -Y | partial match relax ratio for LzEval |
+| -Z | prefetching probability |
+| -p | throughput dumping file name |
+| -n | latency dumping file name |
+| -s | appending timestamps |
 
 #### Synthetic
 Directories,  `EIRES_cost_cache` and `EIRES_LRU_cache` are EIRES codebase combine with cost-based cache and LRU cache respectively.
