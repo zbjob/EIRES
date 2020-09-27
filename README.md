@@ -3,8 +3,8 @@ EIRES: Efficient Integration of Remote Data in Event Stream Processing
 ---
 
 ## Prerequisites
-* Compiler needs support C++11 or higher.
-* bushfire code requires boost library, especially `geometry`, to compute intersections of polygons. That is to compute overlap of geography boundaries over satellite event streams.  To run bushfire detection code, please configure a boost lib, https://www.boost.org/users/history/version_1_72_0.html
+* The compiler needs to support C++11 or higher.
+* Bushfire detection code requires `boost` library, especially `geometry`, to compute intersections of polygons among others. That is to compute overlap of geography boundaries over satellite event streams.  To run bushfire detection code, please configure a boost lib, https://www.boost.org/users/history/version_1_72_0.html
 * All running/configuration scripts are written for linux OS. Windows OS users need to change the paths accordingly.
 * We build parsers to parse query workloads from files. We define query workloads in files ending with `.eql`.  `run/sythetic.eql`, `run/bf-7.7_14.16.eql` and `google_cluster.eql` are query workloads for sythetic, day-time bushfire detection and google cluster monitoring respectively. 
 
