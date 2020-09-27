@@ -24,10 +24,35 @@ They are in `data/sythetic_datasets/` with two synthetic data generators impleme
 
 #### Bushfire detection datasets
 
+
 #### Cluster monitoring datasets
-Full datasets and descriptions are available at https://github.com/google/cluster-data. Due to limited capacity, we pushed a small sample, `data/google_cluster_monitoring_datasets/sample_event_stream.dat.gz`.
-##
-## Run scripts
+Full datasets and descriptions are publicly available at https://github.com/google/cluster-data. Due to limited capacity, we pushed a small sample, `data/google_cluster_monitoring_datasets/sample_event_stream.dat.gz`.
+
+---
+
+## Running scripts
+#### Compile
+```
+cd EIRES
+sh compile.sh
+```
+#### Running
+```
+cd run
+```
+##### run sythetic code and datasets
+```
+sh run_sythetic.sh
+```
+##### run bushfire detection code and datasets
+```
+sh run_bushfire.sh
+```
+##### run google cluster monitoring code and datasets
+```
+sh run_google_cluster.sh
+```
+
 ## Post Analysis scripts
 5th, 25th, 50th, 75th, 95th percentiles latency and throughput.
 
