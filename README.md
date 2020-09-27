@@ -23,7 +23,9 @@ All datasets are in `data` directory. We build separate directories for syntheti
 They are in `data/sythetic_datasets/` with two synthetic data generators implemented by `Uniform_generator.cpp` and `Zipf_generator.cpp`.  As their names suggest, they generate payload value of event streams based on uniform and Zipf disributions respectively. The number of events is configurable. Due to limited capacity, we pushed two sample stream files composed of 500K events, `data/sythetic_datasets/Stream_uniform_500K.csv` and `data/sythetic_datasets/Stream_Zipf_500K.csv`.
 
 #### Bushfire detection datasets
+
 #### Cluster monitoring datasets
+Full datasets and descriptions are available at https://github.com/google/cluster-data. Due to limited capacity, we pushed a small sample, `data/google_cluster_monitoring_datasets/sample_event_stream.dat.gz`.
 ##
 ## Run scripts
 ## Post Analysis scripts
