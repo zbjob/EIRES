@@ -63,10 +63,6 @@ text
 
 [f]: figs/6.png ""
 
-![alt text][g]
-
-[g]: figs/7.png ""
-
 ![alt text][h]
 
 [h]: figs/8.png ""
