@@ -2,6 +2,13 @@
 EIRES: Efficient Integration of Remote Data in Event Stream Processing
 ---
 
+## Prerequisites
+* Compiler needs support C++11 or higher.
+* bushfire code requires boost library, especially `geometry`, to compute intersections of polygons. That is to compute overlap of geography boundaries over satellite event streams.  To run bushfire detection code, please configure a boost lib, https://www.boost.org/users/history/version_1_72_0.html
+* All running/configuration scripts are written for linux OS. Windows OS users need to change the paths accordingly.
+* We build parsers to parse query workloads from files. We define query workloads in files ending with `.eql`.  `run/sythetic.eql`, `run/bf-7.7_14.16.eql` and `google_cluster.eql` are query workloads for sythetic, day-time bushfire detection and google cluster monitoring respectively. 
+
+
 ## Code
 Source code is in `src`. Separate directories are built for synthetic data, bushfire detection and google cluster monitoring.
 
@@ -73,6 +80,13 @@ Following figures are some visualized results.
 
 [i]: figs/9.png ""
 
+There are four generated stream files.
+```
+california.csv
+woolsey.csv
+county.csv
+kincade.csv
+```
 #### Google cluster monitoring datasets
 Google cluster monitoring traces are very well defined.
 Full datasets and descriptions are publicly available at https://github.com/google/cluster-data. Due to limited capacity, we pushed a small sample, `data/google_cluster_monitoring_datasets/sample_event_stream.dat.gz`.
@@ -140,5 +154,4 @@ result_throughput_bushfire.dat
 
 result_latency_google_cluster.dat
 result_throughput_google_cluster.dat
-
 ```
