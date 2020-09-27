@@ -39,7 +39,7 @@ sh compile.sh
 #### Running
 we prepared scripts to run experiment of sythetic setting, bushfire detection and google cluster monitoring respectively.
 Each script runs Baseline1, Baseline2, PFetch, FzEval and Hybrid for related quries and streams for 20 times.
-Latency and throughput measurement are monitored and dumped to files for post analysis.
+Latency and throughput measurement are monitored and dumped to files for later post analysis.
 
 ```
 cd run
