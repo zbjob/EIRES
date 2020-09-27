@@ -19,7 +19,9 @@ Parameters meaning are listed as below:
 | -q | specific query name         |
 | -n | fething-cache policy        |
 | -g | set greedy selection        |
-| -b | run baseline 1|
+| -b | configure CEP engine as baseline 1|
+| -A | configure perfetch (PFetch) to CEP engine      |
+| -B | configure lazy evlaution (LzEval) to CEP engine|
 
 #### Synthetic
 Directories,  `EIRES_cost_cache` and `EIRES_LRU_cache` are EIRES codebase combine with cost-based cache and LRU cache respectively.
