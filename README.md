@@ -117,7 +117,7 @@ sh analyse_sythetic.sh
 sh analyse_bushfire.sh
 sh analyse_google_cluster.sh
 ```
-Following files will be generated.
+Following files will be generated. File names are self-explained. Thery cover latency and througput for sythetic, bushfire and google cluster monitoring datasets
 ```
 result_latency_cost_greedy.dat
 result_latency_LRU_greedy.dat
@@ -134,5 +134,11 @@ result_throughput_LRU_non_greedy.dat
 result_throughput_estimation_noise.dat
 result_throughput_cache_size.dat
 result_throughput_transmission_latency.dat
+
+result_latency_bushfire.dat
+result_throughput_bushfire.dat
+
+result_latency_google_cluster.dat
+result_throughput_google_cluster.dat
 
 ```
