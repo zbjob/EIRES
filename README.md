@@ -2,6 +2,7 @@
 EIRES: Efficient Integration of Remote Data in Event Stream Processing
 
 ## Code
+Source code is in src. 
 ### Synthetic
 ### Bushfire detection
 ### Cluster monitoring
