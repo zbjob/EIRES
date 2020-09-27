@@ -57,6 +57,6 @@ sh run_bushfire.sh
 sh run_google_cluster.sh
 ```
 
-## Post Analysis scripts
+## Post analysis scripts
 We analyse 5th, 25th, 50th, 75th, 95th percentiles latency and throughput.
 
