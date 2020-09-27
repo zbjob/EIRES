@@ -32,7 +32,7 @@ Parameters meaning are listed as below:
 | -Z | prefetching probability |
 | -p | throughput dumping file name |
 | -n | latency dumping file name |
-| -s | appending timestamps |
+| -s | appending timestamps for discarded matches |
 
 #### Synthetic
 Directories,  `EIRES_cost_cache` and `EIRES_LRU_cache` are EIRES codebase combine with cost-based cache and LRU cache respectively.
