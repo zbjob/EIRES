@@ -38,41 +38,41 @@ Weather datasets are crawled from https://www.wunderground.com
 
 ##### Data pre-processing
 
-![alt text][1]
+![alt text][a]
 
-[1] : figs/1.png ""
+[a] : figs/1.png ""
 
-![alt text][2]
+![alt text][b]
 
-[1] : figs/2.png ""
+[b] : figs/2.png ""
 
-![alt text][3]
+![alt text][c]
 
-[1] : figs/3.png ""
+[c] : figs/3.png ""
 
-![alt text][4]
+![alt text][d]
 
-[1] : figs/4.png ""
+[d] : figs/4.png ""
 
-![alt text][5]
+![alt text][e]
 
-[1] : figs/5.png ""
+[e] : figs/5.png ""
 
-![alt text][6]
+![alt text][f]
 
-[1] : figs/6.png ""
+[f] : figs/6.png ""
 
-![alt text][7]
+![alt text][g]
 
-[1] : figs/7.png ""
+[g] : figs/7.png ""
 
-![alt text][8]
+![alt text][h]
 
-[1] : figs/8.png ""
+[h] : figs/8.png ""
 
-![alt text][9]
+![alt text][i]
 
-[1] : figs/9.png ""
+[i] : figs/9.png ""
 
 #### Google cluster monitoring datasets
 Google cluster monitoring traces are very well defined.
