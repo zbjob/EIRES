@@ -107,5 +107,32 @@ sh run_google_cluster.sh
 ```
 
 ## Post analysis scripts
-We analyse 5th, 25th, 50th, 75th, 95th percentiles latency and throughput.
+We analyse 5th, 25th, 50th, 75th, 95th percentiles latency and throughput. They are realized by `run/process-latency.py` and `run/process-throughput.py`
+We prepare scripts to perform all the post analysis.
+After running the evalutions. 
 
+```
+cd run
+sh analyse_sythetic.sh
+sh analyse_bushfire.sh
+sh analyse_google_cluster.sh
+```
+Following files will be generated.
+```
+result_latency_cost_greedy.dat
+result_latency_LRU_greedy.dat
+result_latency_cost_non_greedy.dat
+result_latency_LRU_non_greedy.dat
+result_latency_estimation_noise.dat
+result_latency_cache_size.dat
+result_latency_transmission_latency.dat
+
+result_throughput_cost_greedy.dat
+result_throughput_LRU_greedy.dat
+result_throughput_cost_non_greedy.dat
+result_throughput_LRU_non_greedy.dat
+result_throughput_estimation_noise.dat
+result_throughput_cache_size.dat
+result_throughput_transmission_latency.dat
+
+```
