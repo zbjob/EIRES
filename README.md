@@ -67,7 +67,7 @@ Weather datasets are crawled from https://www.wunderground.com
 ##### Data pre-processing
 To leverage GOES-16 satellite, we need pre-processing and generate event streams. In a nutshell, we cluster GOES-16 radiation levels per channel using kMeans and represent each cluster as a Polygon data type (using boost library). The process can be found in this [figure](data/bushfire_datasets/bushfire_detection_process.jpg).
 
-Several visualized results can be found [here](data/bushfire_datasets/visualization.png)
+Several visualized results can be found [here](data/bushfire_datasets/visualization.png).
 
 
 There are four generated stream files.
