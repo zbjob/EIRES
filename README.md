@@ -8,6 +8,9 @@ EIRES: Efficient Integration of Remote Data in Event Stream Processing
 * All running/configuration scripts are written for linux OS and Mac OS. Windows OS users need to change the paths accordingly (replace "/" with "\\").
 * We build parsers to parse query workloads from files. We define query workloads in files ending with `.eql`.  `run/sythetic.eql`, `run/bf-7.7_14.16.eql` and `google_cluster.eql` are query workloads for sythetic, day-time bushfire detection and google cluster monitoring respectively. 
 
+## Clone code
+
+## Download code
 
 ## Code
 Source code is in `src`. Separate directories are built for synthetic data, bushfire detection and google cluster monitoring.
