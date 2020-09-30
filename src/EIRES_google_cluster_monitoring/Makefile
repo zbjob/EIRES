@@ -17,4 +17,4 @@ bin/cep_match: $(CEP_MATCH_OBJ)
 	gcc -c $< -o $@
 
 %.o: %.cpp
-	g++ -std=c++14 -O3 -mavx2 -c $< -o $@ 
+	g++ -std=c++14 -O3 -c $< -o $@ 

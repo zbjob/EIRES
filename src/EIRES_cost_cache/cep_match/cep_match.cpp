@@ -1405,7 +1405,12 @@ public:
 
 		uint64_t* outattr_it = r.attributes;
 		for (auto it : m_OutEventAttrSrc)
+        {
 			*outattr_it++ = _attributes[it];
+            cout << *outattr_it << " " << flush;
+        }
+        
+        cout << endl;
 
         uint64_t la = _attributes[Query::DA_FULL_MATCH_TIME] - _attributes[Query::DA_CURRENT_TIME]; 
         m_RealTimeLatency = la;

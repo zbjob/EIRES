@@ -372,7 +372,6 @@ void PatternMatcher::State::insert(const attr_t * _attributes)
     }
 
 
-    ++NumPM;
     ++NumPartialMatchers;
         
 	if(callback_insert)
