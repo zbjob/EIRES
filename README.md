@@ -9,8 +9,22 @@ EIRES: Efficient Integration of Remote Data in Event Stream Processing
 * We build parsers to parse query workloads from files. We define query workloads in files ending with `.eql`.  `run/sythetic.eql`, `run/bf-7.7_14.16.eql` and `google_cluster.eql` are query workloads for sythetic, day-time bushfire detection and google cluster monitoring respectively. 
 
 ## Clone code
+We prepared scripts for cloning form anonymous.4open.science. To this end, Python3 is required. Please find following steps. 
+```
+pip install beautifulsoup4
+pip install lxml
+cd EIRES
+```
+Download `clone.py` [here](clone.py)
+
+```
+python clone.py --clone-dir ~/EIRES --target https://anonymous.4open.science/r/916ff376-aa79-45a8-9979-c0fe47b1bac4/
+```
 
 ## Download code
+We also provide compressed archive file for directly downloading. Please find the link [here](https://drive.google.com/file/d/1oC-MjfsoXmcbj7og-ll7L8zOHIa_dU5r/view?usp=sharing).
+
+The size of the archive file, EIRES.tar.gz, is around 1.1GB. The unziped repo is around 8.7GB.
 
 ## Code
 Source code is in `src`. Separate directories are built for synthetic data, bushfire detection and google cluster monitoring.
