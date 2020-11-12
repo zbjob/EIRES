@@ -1,6 +1,7 @@
 # SIGMOD 2021 submission
 EIRES: Efficient Integration of Remote Data in Event Stream Processing
 ---
+# Evaluation results for author feedback can be found at this [figure](Appendix_for_AuthorFeedback.png) or [pdf](Appendix_for_AuthorFeedback.pdf). 
 
 ## Prerequisites
 * The compiler needs to support C++11 or higher. In Makefiles, the default compiler is set as g++.
