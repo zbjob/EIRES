@@ -1,4 +1,3 @@
-# !Evaluation results for author feedback can be found at this [figure](AuthorFeedback.png) or [pdf](AuthorFeedback.pdf). 
 # SIGMOD 2021 submission
 EIRES: Efficient Integration of Remote Data in Event Stream Processing
 ---
