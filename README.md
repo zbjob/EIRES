@@ -35,7 +35,7 @@ Parameters and their semantics are listed as below:
 | -c | query workload file |
 | -q | specific query name |
 | -F | stream source file |
-| -g | set greedy selection |
+| -g | set greedy selection (event consumption policy) |
 | -b | configure CEP engine as baseline 1 |
 | -A | configure perfetch (PFetch) to CEP engine |
 | -B | configure lazy evlaution (LzEval) to CEP engine |
