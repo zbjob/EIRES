@@ -29,8 +29,8 @@ The size of the archive file, EIRES.tar.gz, is around 1.1GB. The unziped repo is
 ## Code
 Source code is in `src`. Separate directories are built for synthetic data, bushfire detection and google cluster monitoring.
 
-Parameters meaning are listed as below:
-| parameter      | semantic        |
+Parameters and their semantics are listed as below:
+| parameter      | semantics       |
 | :------------- | :--------------:|
 | -c | query workload file |
 | -q | specific query name |
