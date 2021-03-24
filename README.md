@@ -1,8 +1,7 @@
-# SIGMOD 2021 submission
 EIRES: Efficient Integration of Remote Data in Event Stream Processing
 ---
 
-## Prerequisites
+## Prerequisites to run the code
 * The compiler needs to support C++11 or higher. In Makefiles, the default compiler is set as g++.
 * Bushfire detection code requires `boost` library, especially `geometry`, to compute intersections of polygons among others. That is to compute overlap of geography boundaries over satellite event streams.  To run bushfire detection code, please configure a boost lib, https://www.boost.org/users/history/version_1_72_0.html.  Edit  `EIRES/src/EIRES_bushfire/Makefile`, update flags `BOOST` and `BOOSTLD` with the path in your machine. 
 * All running/configuration scripts are written for linux OS. Windows OS users need to change the paths accordingly (replace "/" with "\\").
