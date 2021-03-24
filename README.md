@@ -6,12 +6,12 @@ This work has been accepted by SIGMOD'21. An extended version of the paper can b
 * The compiler needs to support C++11 or higher. In Makefiles, the default compiler is set as g++.
 * Bushfire detection code requires `boost` library, especially `geometry`, to compute intersections of polygons among others. That is to compute overlap of geography boundaries over satellite event streams.  To run bushfire detection code, please configure a boost lib, https://www.boost.org/users/history/version_1_72_0.html.  Edit  `EIRES/src/EIRES_bushfire/Makefile`, update flags `BOOST` and `BOOSTLD` with the path in your machine. 
 * All running/configuration scripts are written for linux OS. Windows OS users need to change the paths accordingly (replace "/" with "\\").
-* We build parsers to parse query workloads from files. We define query workloads in files ending with `.eql`.  `run/sythetic.eql`, `run/bf-7.7_14.16.eql` and `google_cluster.eql` are query workloads for sythetic, day-time bushfire detection and google cluster monitoring respectively. 
+* We build parsers to parse query workloads from files. We define query workloads in files ending with `.eql`.  `run/sythetic.eql`, `run/bf-7.7_14.16.eql` and `google_cluster.eql` are query workloads for synthetic, day-time bushfire detection and google cluster monitoring respectively. 
 
 ## Download code and data
 We also provide compressed archive file for directly downloading. Please find the link [here](https://drive.google.com/file/d/1oC-MjfsoXmcbj7og-ll7L8zOHIa_dU5r/view?usp=sharing).
 
-The size of the archive file, EIRES.tar.gz, is around 1.1GB. The unziped repo is around 8.7GB.
+The size of the archive file, EIRES.tar.gz, is around 1.1GB. The unzipped repo is around 8.7GB.
 
 ## Code
 Source code is in `src`. Separate directories are built for synthetic data, bushfire detection and google cluster monitoring.
@@ -24,8 +24,8 @@ Parameters and their semantics are listed as below:
 | -F | stream source file |
 | -g | set greedy selection (event consumption policy) |
 | -b | configure CEP engine as naive baseline (without caching and fetching) |
-| -A | configure perfetch (PFetch) to CEP engine |
-| -B | configure lazy evlaution (LzEval) to CEP engine |
+| -A | configure prefetch (PFetch) to CEP engine |
+| -B | configure lazy evaluation (LzEval) to CEP engine |
 | -D | the number of events to process |
 | -C | cache capacity |
 | -f | number of fetch worker threads |
@@ -39,11 +39,11 @@ Parameters and their semantics are listed as below:
 | -s | appending timestamps for discarded matches |
 
 #### Synthetic
-Directories,  `EIRES_cost_cache` and `EIRES_LRU_cache` are EIRES codebase combine with cost-based cache and LRU cache respectively.
-They have similar code structures. Entry points, `main` functions, are in defined in `EIRES_cost_cache/cep_match/cep_match.cpp` and `EIRES_LRU_cache/cep_match/cep_match.cpp`.
+Directories,  `EIRES_cost_cache` and `EIRES_LRU_cache` are EIRES codebase combined with cost-based cache and LRU cache respectively.
+They have similar code structures. Entry points, `main` functions, are defined in `EIRES_cost_cache/cep_match/cep_match.cpp` and `EIRES_LRU_cache/cep_match/cep_match.cpp`.
 
 #### Bushfire detection
-Bushfire detection code is in `EIRES_bushfire`. The entry piont, `main` function is defined in `EIRES_bushfire/cep/cep_match.cpp`.
+Bushfire detection code is in `EIRES_bushfire`. The entry point, `main` function is defined in `EIRES_bushfire/cep/cep_match.cpp`.
 
 #### Cluster monitoring
 Google cluster monitoring code is in `EIRES_google_cluster_monitoring`. The `main` function is defined in `EIRES_google_cluster_monitoring/cep_match/cep_match.cpp`
@@ -56,7 +56,7 @@ Google cluster monitoring code is in `EIRES_google_cluster_monitoring`. The `mai
 All datasets are in `data` directory. We build separate directories for synthetic datasets, bushfire detection datasets and google cluster monitoring datasets.
 
 #### Synthetic datasets
-They are in `data/sythetic_datasets/` with two synthetic data generators implemented by `Uniform_generator.cpp` and `Zipf_generator.cpp`.  As their names suggest, they generate payload value of event streams based on uniform and Zipf disributions respectively. The number of events is configurable. Due to limited capacity, we pushed two sample stream files composed of 500K events, `data/sythetic_datasets/Stream_uniform_500K.csv` and `data/sythetic_datasets/Stream_Zipf_500K.csv`.
+They are in `data/sythetic_datasets/` with two synthetic data generators implemented by `Uniform_generator.cpp` and `Zipf_generator.cpp`.  As their names suggest, they generate payload value of event streams based on uniform and Zipf distributions respectively. The number of events is configurable. Due to limited capacity, we pushed two sample stream files composed of 500K events, `data/_datasets/Stream_uniform_500K.csv` and `data/sythetic_datasets/Stream_Zipf_500K.csv`.
 
 #### Bushfire detection datasets
 They are in `data/bushfire_datasets/`.
@@ -94,14 +94,14 @@ cd EIRES
 sh compile.sh
 ```
 #### Running
-we prepared scripts to run experiment of sythetic setting, bushfire detection and google cluster monitoring respectively.
-Each script runs Baseline1, Baseline2, PFetch, FzEval and Hybrid for related quries and streams for 20 times.
+we prepared scripts to run experiments of synthetic setting, bushfire detection and google cluster monitoring respectively.
+Each script runs Baseline1, Baseline2, PFetch, FzEval and Hybrid for related queries and streams for 20 times.
 Latency and throughput measurement are monitored and dumped to files for later post analysis.
 
 ```
 cd run
 ```
-##### run sythetic code and datasets
+##### run synthetic code and datasets
 ```
 sh run_sythetic.sh
 ```
@@ -125,7 +125,7 @@ sh analyse_sythetic.sh
 sh analyse_bushfire.sh
 sh analyse_google_cluster.sh
 ```
-Following files will be generated. File names are self-explained. Thery cover latency and througput for sythetic, bushfire and google cluster monitoring datasets
+Following files will be generated. File names are self-explained. Thery cover latency and througput for synthetic, bushfire and google cluster monitoring datasets
 ```
 result_latency_cost_greedy.dat
 result_latency_LRU_greedy.dat
