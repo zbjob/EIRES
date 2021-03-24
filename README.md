@@ -1,5 +1,6 @@
 EIRES: Efficient Integration of Remote Data in Event Stream Processing
 ---
+This work has been accepted by SIGMOD'21. An extended version of the paper can be found [here](EIRES_extension.pdf).
 
 ## Prerequisites to run the code
 * The compiler needs to support C++11 or higher. In Makefiles, the default compiler is set as g++.
