@@ -56,7 +56,7 @@ Google cluster monitoring code is in `EIRES_google_cluster_monitoring`. The `mai
 All datasets are in `data` directory. We build separate directories for synthetic datasets, bushfire detection datasets and google cluster monitoring datasets.
 
 #### Synthetic datasets
-They are in `data/sythetic_datasets/` with two synthetic data generators implemented by `Uniform_generator.cpp` and `Zipf_generator.cpp`.  As their names suggest, they generate payload value of event streams based on uniform and Zipf distributions respectively. The number of events is configurable. Due to limited capacity, we pushed two sample stream files composed of 500K events, `data/_datasets/Stream_uniform_500K.csv` and `data/sythetic_datasets/Stream_Zipf_500K.csv`.
+They are in `data/synthetic_datasets/` with two synthetic data generators implemented by `Uniform_generator.cpp` and `Zipf_generator.cpp`.  As their names suggest, they generate payload value of event streams based on uniform and Zipf distributions respectively. The number of events is configurable. Due to limited capacity, we pushed two sample stream files composed of 500K events, `data/_datasets/Stream_uniform_500K.csv` and `data/synthetic_datasets/Stream_Zipf_500K.csv`.
 
 #### Bushfire detection datasets
 They are in `data/bushfire_datasets/`.
@@ -103,7 +103,7 @@ cd run
 ```
 ##### run synthetic code and datasets
 ```
-sh run_sythetic.sh
+sh run_synthetic.sh
 ```
 ##### run bushfire detection code and datasets
 ```
@@ -117,15 +117,15 @@ sh run_google_cluster.sh
 ## Post analysis scripts
 We analyse 5th, 25th, 50th, 75th, 95th percentiles latency and throughput. They are realized by `run/process-latency.py` and `run/process-throughput.py`
 We prepare scripts to perform all the post analysis.
-After running the evalutions. 
+After running the evaluations. 
 
 ```
 cd run
-sh analyse_sythetic.sh
+sh analyse_synthetic.sh
 sh analyse_bushfire.sh
 sh analyse_google_cluster.sh
 ```
-Following files will be generated. File names are self-explained. Thery cover latency and througput for synthetic, bushfire and google cluster monitoring datasets
+Following files will be generated. File names are self-explained. They cover latency and throughput for synthetic, bushfire and google cluster monitoring datasets
 ```
 result_latency_cost_greedy.dat
 result_latency_LRU_greedy.dat
