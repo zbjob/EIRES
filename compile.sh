@@ -9,3 +9,6 @@ make
 
 cd ../EIRES_LRU_cache
 make
+
+cd ../EIRES_tune_weight
+make

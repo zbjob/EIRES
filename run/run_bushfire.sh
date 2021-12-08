@@ -1,4 +1,4 @@
-for j in `seq 1 20`
+for j in `seq 1 $1`
 do
     ../src/EIRES_bushfire/bin/cep_match -f ../data/bushfire_datasets/california_satellite_weather.csv -c bf-7.7_14.16.eql -F 5 -L 10000 -Z 100 -C 1000 -n day_fire_BL1_"$j"_run -b -p throughput_day_fire_BL1_"$j"_run.csv
     ../src/EIRES_bushfire/bin/cep_match -f ../data/bushfire_datasets/california_satellite_weather.csv -c bf-7.7_14.16.eql -F 5 -L 10000 -Z 100 -C 1000 -n day_fire_BL2_"$j"_run -p throughput_day_fire_BL2_"$j"_run.csv

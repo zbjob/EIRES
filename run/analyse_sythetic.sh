@@ -17,7 +17,7 @@ rm result_throughput_estimation_noise.dat
 rm result_throughput_cache_size.dat
 rm result_throughput_transmission_latency.dat
 
-for j in `seq 1 20`
+for j in `seq 1 $1`
 do
     python process-latency.py latency_BL1_greedy_"$j"run.csv 1 "$j" >> result_latency_cost_greedy.dat
     python process-latency.py latency_BL1_greedy_"$j"run.csv 1 "$j" >> result_latency_LRU_greedy.dat
@@ -86,7 +86,7 @@ do
         python process-throughput.py throughput_Hybrid_greedy_"$i"_cache_size_"$j"run.csv 5 "$j" >> result_throughput_cache_size.dat
     done
 
-    #sensitivity of remote ../data transimission latency
+    #sensitivity of remote data transimission latency
     for i in 1 10 100 1000;
     do
         python process-latency.py latency_PFetch_greedy_"$i"us_"$j"run.csv 3 "$j" >> result_latency_transmission_latency.dat
@@ -96,4 +96,14 @@ do
         python process-latency.py latency_Hybrid_greedy_"$i"us_"$j"run.csv 5 "$j" >> result_latency_transmission_latency.dat
         python process-throughput.py throughput_Hybrid_greedy_"$i"us_"$j"run.csv 5 "$j" >> result_throughput_transmission_latency.dat
     done
+done
+
+for j in `seq 30 5 50`
+do
+    python process-latency.py latency_Tune_weight_fetch_"$j".csv "$[$[$[$j-30]/5]+1]" "$j" >> result_latency_weight_fetch.dat
+done
+
+for i in `seq 1 2 9`
+do
+    python process-latency.py latency_Tune_weight_cache_"$j".csv "$[$[$i+1]/2]" "$j" >> uu_fu_weight_PC.dat
 done

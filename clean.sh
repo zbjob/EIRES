@@ -10,6 +10,9 @@ make clean
 cd ../EIRES_LRU_cache
 make clean
 
+cd ../EIRES_tune_weight
+make clean
+
 cd ../../
 rm run/*.csv
 rm run/*.txt

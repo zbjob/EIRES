@@ -1767,8 +1767,6 @@ int main(int _argc, char* _argv[])
     string streamFile = HOMEDIR + "/CEP_load_shedding/src_PM_Distribution_test/NormalEventStreamGen/Uniform_StreamLog_prefetch_500K.csv";
     //string streamFile = HOMEDIR + "/CEP_load_shedding/src_PM_Distribution_test/NormalEventStreamGen/Uniform_StreamLog_prefetch_500K_ID1-10.csv";
 
-    string _pFile = string("DS4PM");
-    string _pFunc = string("DS1");
 
     double sheddingRatio = 0;
     int PMABUpperBound = 10;

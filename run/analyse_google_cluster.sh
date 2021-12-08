@@ -1,7 +1,7 @@
 rm result_latency_google_cluster.dat
 rm result_throughput_google_cluster.dat
 
-for j in `seq 1 20`
+for j in `seq 1 $1`
 do
     python process-latency latency_google_cluster_BL1_"$j"_run.csv 1 "$j" >> result_latency_google_cluster.dat
     python process-throughput throughput_google_cluster_BL1_"$j"_run.csv 1 "$j" >> result_throughput_google_cluster.dat
