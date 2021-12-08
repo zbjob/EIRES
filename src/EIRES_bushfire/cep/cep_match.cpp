@@ -763,16 +763,17 @@ int main(int _argc, char* _argv[])
 
         cout << "fetcher, cache worker done " << endl;
 
-        for(auto &&s: prog.m_Matcher.m_States)
-        {
-            outResultFile << s.ID << " " << s.keys.size() << endl;
-        }
+//        for(auto &&s: prog.m_Matcher.m_States)
+//        {
+//            outResultFile << s.ID << " " << s.keys.size() << endl;
+//        }
 
-        for(int i=0; i<num_fetchWoker; ++i)
-            outResultFile << i << " " << fetchWorker[i].keys.size() << endl;
+//        for(int i=0; i<num_fetchWoker; ++i)
+//            outResultFile << i << " " << fetchWorker[i].keys.size() << endl;
+//
+//        outResultFile << "cached key # " << cache.keys.size() << endl;
 
-        outResultFile << "cached key # " << cache.keys.size() << endl;
-        cache.stop();
+        exit(0);
 
         for(int i=0; i<num_fetchWoker; ++i) 
         {    
@@ -780,6 +781,7 @@ int main(int _argc, char* _argv[])
             fetchWorker[i].m_Thread.detach();
         }    
         cache.m_Thread.detach(); 
+        cache.stop();
 
         delete [] fetchWorker;
         return 0;
