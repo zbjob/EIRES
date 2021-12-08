@@ -1,0 +1,304 @@
+
+TYPE A{
+    timestamp,
+    v1,
+    v2,
+    event_id
+};
+
+TYPE B{
+    timestamp,
+    event_id,
+    v1,
+    v2,
+    event_id
+};
+
+TYPE C{
+    timestamp,
+    event_id,
+    v1,
+    v2,
+    event_id
+};
+
+QUERY P1
+EVENT SEQ(A a, B b, C c)
+WHERE [event_id] && a.v1 < b.v1 && b.v2 > c.v2 && a.v1 > c.v1
+WITHIN 30s
+RETURN GReturn3(a.timestamp, b.timestamp, c.timestamp);
+
+QUERY P2
+EVENT SEQ(A a, B b, C c)
+WHERE [event_id] && a.v1 > b.v1 && b.v2 < c.v2 && a.v1 < c.v1
+WITHIN 30s
+RETURN GReturn3(a.timestamp, b.timestamp, c.timestamp);
+
+40,5,  //Distibution for A.v1
+50,5,  // ... A.v2
+50,4,  // ... B.v1
+50,5,  // ... B.v2
+40,5,  // ... C.v1
+50,5); // ... C.v2
+----------------------------
+event type selectivity A is 16 times higher than B and C
+----------------------------
+
+P1 no shedding
+state scoreTable size == 0
+
+state scoreTable size == 1000
+state size == 121442
+
+state scoreTable size == 35
+state size == 713372
+
+state scoreTable size == 0
+
+state scoreTable size == 0
+queue size -1
+perform 0loadshedding
+eventCn 1186550
+#full Match 9510393
+#high latecny (> 1500) 3723
+
+============================================
+
+P1 shedding  shed 20% for each state buffer
+state scoreTable size == 0
+
+state scoreTable size == 37000
+state size == 55596
+
+state scoreTable size == 1267
+state size == 76278
+
+state scoreTable size == 0
+
+state scoreTable size == 0
+queue size 180
+perform 46loadshedding
+eventCn 1627705
+#full Match 5586966
+#high latecny (> 1500) 1809
+============================================
+
+P2 shedding state 1 was shedded 30%, state 2 no shedding
+
+state scoreTable size == 0
+
+state scoreTable size == 16000
+state size == 172325
+
+state scoreTable size == 525
+state size == 134730
+
+state scoreTable size == 0
+
+state scoreTable size == 0
+queue size 65
+perform 26loadshedding
+eventCn 1755025
+#full Match 29734482
+#high latecny (> 1500) 1500
+
+===============================================
+P2 no shedding
+
+state scoreTable size == 0
+
+state scoreTable size == 0
+state size == 232421
+
+state scoreTable size == 0
+state size == 217889
+
+state scoreTable size == 0
+
+state scoreTable size == 0
+queue size 133
+perform 0loadshedding
+eventCn 1770034
+#full Match 30498640
+#high latecny (> 1500) 1814
+
+
+Large stream No shedding
+================================================
+eventCn 237912470
+#full Match 4141934
+#high latecny (> 800) 193
+
+real12m9.189s
+user12m22.005s
+sys0m1.504s
+
+Large stream partial match load shedding
+==============================================
+perform 44loadshedding
+eventCn 11063327
+#full Match 5660167
+#high latecny (> 800) 98
+
+real7m49.351s
+user8m2.826s
+sys0m0.800s
+
+perform 35loadshedding
+eventCn 46924629
+#full Match 5408288
+#high latecny (> 800) 58
+
+real8m14.248s
+user8m27.564s
+sys0m0.820s
+
+
+random input shedding
+===========================
+state size == 269691
+state size == 3509637
+queue size 55
+perform 108564loadshedding
+eventCn 1563755
+#full Match 14359198
+#high latecny (> 800) 993
+
+real1m16.153s
+user1m16.180s
+sys0m0.228s
+
+PM shedding
+===============
+state size == 227476
+state size == 3060508
+queue size -17
+perform 27loadshedding
+eventCn 1634357
+#full Match 16568582
+#high latecny (> 800) 1175
+
+real1m29.619s
+user1m29.752s
+sys0m0.172s
+
+state size == 260033
+state size == 3675705
+queue size 78
+perform 0loadshedding
+eventCn 1706721
+#full Match 17224193
+#high latecny (> 800) 1077
+
+real1m25.559s
+user1m25.280s
+sys0m0.160s
+
+
+queue size -70
+perform 27loadshedding
+eventCn 1586105
+#full Match 16645321
+#high latecny (> 800) 1302
+
+real1m26.597s
+user1m26.308s
+sys0            m0.168s
+
+P3 No Shedding
+====================
+perform 0loadshedding
+eventCn 1637983
+#full Match 15085056
+#high latecny (> 800) 39
+
+real0m50.274s
+user0m50.504s
+sys0m0          .060s
+
+P3 PM shedding
+===================
+queue size 80
+perform 1loadshedding
+eventCn 1611294
+#full Match 13918702
+#high latecny (> 800) 21
+
+real0m52.240s
+user0m52.       484s
+sys0m0.128s
+
+
+queue size 66
+perform 0loadshedding
+eventCn 1661133
+#full Match 31032025
+#high latecny (> 800) 1595
+
+
+P3 time window = 15s no shedding
+queue size 204
+perform 0loadshedding
+eventCn 1679359
+#full Match 20354402
+#high latecny (> 800) 169
+
+real1m4.674s
+us  er1m4.420s
+sys0m0.084s
+===============================
+===============================
+
+
+P3 time window = 15s PM shedding 20% buffer size
+queue size 27
+perform 9loadshedding
+eventCn 1475467
+#full Match 14562918
+#high latecny (> 800) 145
+
+P3 time window = 15s PM shedding 30% buffer size
+perform 6loadshedding
+eventCn 1469150
+#full Match 14045211
+#high latecny (> 800) 143
+m_RandomInputSheddingFlag: 0
+
+P3 time window = 15s no shedding
+queue size 43
+perform 0loadshedding
+eventCn 1494275
+#full Match 16888204
+#high latecny (> 800) 149
+m_RandomInputSheddingFlag: 0
+
+P3 time window = 15s PM shedding 50%
+queue size 50
+perform 13loadshedding
+eventCn 1500079
+#full Match 14917125
+#high latecny (> 800) 166
+
+
+
+P1 time window = 60s no shedding
+queue size 9
+perform 0loadshedding
+eventCn 1500302
+#full Match 24836535
+#high latecny (> 1800) 548
+
+P1 time window = 60s PM shedding 20%
+perform 27loadshedding
+eventCn 1361260
+#full Match 24687137
+#high latecny (> 1800) 533
+
+P1 time window = 60w PM shedding 30%
+queue size 23
+perform 28loadshedding
+eventCn 1543695
+#full Match 24750393
+#high latecny (> 1800) 556
+
+
