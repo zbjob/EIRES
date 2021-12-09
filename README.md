@@ -97,7 +97,11 @@ cd boost_1_72_0
 ./bootstrap.sh
 ./b2
 ```
-Edit  `EIRES/src/EIRES_bushfire/Makefile`, update flags `BOOST` and `BOOSTLD` with the path in your machine. 
+Edit  `EIRES/src/EIRES_bushfire/Makefile`, update flags `BOOST` and `BOOSTLD` with the path in your machine. Assuming the `EIRES` is in `$HOME`, set
+```
+BOOST = -I $HOME/EIRES/boost_1_72_0
+BOOSTLD = -L $HOME/EIRES/boost_1_72_0/stage/lib
+```
 
 #### Compile
 ```
