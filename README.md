@@ -142,6 +142,9 @@ sh analyse_google_cluster.sh
 ```
 Following files will be generated. File names are self-explained. They cover latency and throughput for synthetic, bushfire and google cluster monitoring datasets
 ```
+cd run
+ls -ls *.dat
+
 result_latency_cost_greedy.dat
 result_latency_LRU_greedy.dat
 result_latency_cost_non_greedy.dat
