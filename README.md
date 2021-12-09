@@ -115,6 +115,7 @@ Latency and throughput measurement are monitored and dumped to files for later p
 
 ```
 cd run
+sh run_all.sh
 ```
 ##### run synthetic code and datasets
 ```
@@ -136,6 +137,8 @@ After running the evaluations.
 
 ```
 cd run
+sh analyse_all.sh
+
 sh analyse_synthetic.sh
 sh analyse_bushfire.sh
 sh analyse_google_cluster.sh
