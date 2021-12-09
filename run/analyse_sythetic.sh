@@ -65,36 +65,48 @@ do
     python process-throughput.py throughput_Hybrid_non_greedy_LRU_"$j"run.csv 5 "$j" >> result_throughput_LRU_non_greedy.dat
 
     #sensitivity of cost estimatioin quality
-    for i in `seq 10 10 90`
+    declare -a NameMapping
+
+    NameMapping[10]="1000"
+    NameMapping[30]="2000"
+    NameMapping[50]="3000"
+    NameMapping[70]="4000"
+    NameMapping[90]="5000"
+
+    for i in `seq 10 20 90`
     do
-        python process-latency.py latency_PFetch_greedy_"$i"_noise_"$j"run.csv 3 "$j" >> result_latency_estimation_noise.dat
-        python process-throughput.py throughput_PFetch_greedy_"$i"_noise_"$j"run.csv 3 "$j" >> result_throughput_estimation_noise.dat
-        python process-latency.py latency_LzEval_greedy_"$i"_noise_"$j"run.csv 4 "$j" >> result_latency_estimation_noise.dat
-        python process-throughput.py throughput_LzEval_greedy_"$i"_noise_"$j"run.csv 4 "$j" >> result_throughput_estimation_noise.dat
-        python process-latency.py latency_Hybrid_greedy_"$i"_noise_"$j"run.csv 5 "$j" >> result_latency_estimation_noise.dat
-        python process-throughput.py throughput_Hybrid_greedy_"$i"_noise_"$j"run.csv 5 "$j" >> result_throughput_estimation_noise.dat
+        python process-latency.py latency_PFetch_greedy_"$i"_noise_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_latency_estimation_noise.dat
+        python process-throughput.py throughput_PFetch_greedy_"$i"_noise_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_throughput_estimation_noise.dat
+        python process-latency.py latency_LzEval_greedy_"$i"_noise_"$j"run.csv "$[NameMapping[$i]]"  "$j" >> result_latency_estimation_noise.dat
+        python process-throughput.py throughput_LzEval_greedy_"$i"_noise_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_throughput_estimation_noise.dat
+        python process-latency.py latency_Hybrid_greedy_"$i"_noise_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_latency_estimation_noise.dat
+        python process-throughput.py throughput_Hybrid_greedy_"$i"_noise_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_throughput_estimation_noise.dat
     done
 
     #sensitivity of cache size
-    for i in `seq 1000 1000 10000`
+    for i in `seq 1000 1000 5000`
     do
-        python process-latency.py latency_PFetch_greedy_"$i"_cache_size_"$j"run.csv 3 "$j" >> result_latency_cache_size.dat
-        python process-throughput.py throughput_PFetch_greedy_"$i"_cache_size_"$j"run.csv 3 "$j" >> result_throughput_cache_size.dat
-        python process-latency.py latency_LzEval_greedy_"$i"_cache_size_"$j"run.csv 4 "$j" >> result_latency_cache_size.dat
-        python process-throughput.py throughput_LzEval_greedy_"$i"_cache_size_"$j"run.csv 4 "$j" >> result_throughput_cache_size.dat
-        python process-latency.py latency_Hybrid_greedy_"$i"_cache_size_"$j"run.csv 5 "$j" >> result_latency_cache_size.dat
-        python process-throughput.py throughput_Hybrid_greedy_"$i"_cache_size_"$j"run.csv 5 "$j" >> result_throughput_cache_size.dat
+        python process-latency.py latency_PFetch_greedy_"$i"_cache_size_"$j"run.csv "$i" "$j" >> result_latency_cache_size.dat
+        python process-throughput.py throughput_PFetch_greedy_"$i"_cache_size_"$j"run.csv "$i" "$j" >> result_throughput_cache_size.dat
+        python process-latency.py latency_LzEval_greedy_"$i"_cache_size_"$j"run.csv "$i" "$j" >> result_latency_cache_size.dat
+        python process-throughput.py throughput_LzEval_greedy_"$i"_cache_size_"$j"run.csv "$i" "$j" >> result_throughput_cache_size.dat
+        python process-latency.py latency_Hybrid_greedy_"$i"_cache_size_"$j"run.csv "$i" "$j" >> result_latency_cache_size.dat
+        python process-throughput.py throughput_Hybrid_greedy_"$i"_cache_size_"$j"run.csv "$i" "$j" >> result_throughput_cache_size.dat
     done
 
     #sensitivity of remote data transimission latency
+    NameMapping[1]="1000"
+    NameMapping[10]="2000"
+    NameMapping[100]="3000"
+    NameMapping[1000]="4000"
     for i in 1 10 100 1000;
     do
-        python process-latency.py latency_PFetch_greedy_"$i"us_"$j"run.csv 3 "$j" >> result_latency_transmission_latency.dat
-        python process-throughput.py throughput_PFetch_greedy_"$i"us_"$j"run.csv 3 "$j" >> result_throughput_transmission_latency.dat
-        python process-latency.py latency_LzEval_greedy_"$i"us_"$j"run.csv 4 "$j" >> result_latency_transmission_latency.dat
-        python process-throughput.py throughput_LzEval_greedy_"$i"us_"$j"run.csv 4 "$j" >> result_throughput_transmission_latency.dat
-        python process-latency.py latency_Hybrid_greedy_"$i"us_"$j"run.csv 5 "$j" >> result_latency_transmission_latency.dat
-        python process-throughput.py throughput_Hybrid_greedy_"$i"us_"$j"run.csv 5 "$j" >> result_throughput_transmission_latency.dat
+        python process-latency.py latency_PFetch_greedy_"$i"us_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_latency_transmission_latency.dat
+        python process-throughput.py throughput_PFetch_greedy_"$i"us_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_throughput_transmission_latency.dat
+        python process-latency.py latency_LzEval_greedy_"$i"us_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_latency_transmission_latency.dat
+        python process-throughput.py throughput_LzEval_greedy_"$i"us_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_throughput_transmission_latency.dat
+        python process-latency.py latency_Hybrid_greedy_"$i"us_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_latency_transmission_latency.dat
+        python process-throughput.py throughput_Hybrid_greedy_"$i"us_"$j"run.csv "$[NameMapping[$i]]" "$j" >> result_throughput_transmission_latency.dat
     done
 done
 
@@ -105,5 +117,5 @@ done
 
 for i in `seq 1 2 9`
 do
-    python process-latency.py latency_Tune_weight_cache_"$j".csv "$[$[$i+1]/2]" "$j" >> uu_fu_weight_PC.dat
+    python process-latency.py latency_Tune_weight_cache_"$j".csv "$[$[$i+1]/2]" "$j" >> result_latency_weight_cache.dat
 done

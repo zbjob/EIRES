@@ -29,7 +29,7 @@ do
     ../src/EIRES_LRU_cache/bin/cep_match -F ../data/sythetic_datasets/Stream_uniform_500K.csv -c ./sythetic.eql -q P2 -n Hybrid_non_greedy_LRU_"$j"run -D 50000 -f 5 -C 2000 -Z 100 -L 10 -u 2000 -s -A -B -p throughput_Hybrid_non_greedy_LRU_"$j"run.csv
 
     #sensitivity of cost estimatioin quality
-    for i in `seq 10 10 90`
+    for i in `seq 10 20 90`
     do
         #Prefetching PFetch
         ../src/EIRES_cost_cache/bin/cep_match -F ../data/sythetic_datasets/Stream_uniform_500K.csv -c ./sythetic.eql -q P2 -n PFetch_greedy_"$i"_noise_"$j"run -D 50000 -f 5 -C 2000 -Z 100 -L 10 -u 2000 -X "$i" -g -s -A -p throughput_PFetch_greedy_"$i"_noise_"$j"run.csv
@@ -40,7 +40,7 @@ do
     done
 
     #sensitivity of cache size
-    for i in `seq 1000 1000 10000`
+    for i in `seq 1000 1000 5000`
     do
         #Prefetching PFetch
         ../src/EIRES_cost_cache/bin/cep_match -F ../data/sythetic_datasets/Stream_uniform_500K.csv -c ./sythetic.eql -q P2 -n PFetch_greedy_"$i"_cache_size_"$j"run -D 50000 -f 5 -C "$i" -Z 100 -L 10 -u 2000  -g -s -A -p throughput_PFetch_greedy_"$i"_cache_size_"$j"run.csv
