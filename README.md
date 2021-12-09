@@ -88,6 +88,17 @@ Full datasets and descriptions are publicly available at https://github.com/goog
 ---
 
 ## Running scripts
+#### configure boost lib
+```
+cd EIRES
+wget https://boostorg.jfrog.io/artifactory/main/release/1.72.0/source/boost_1_72_0.tar.gz
+tar zxvf boost_1_72_0.tar.gz
+cd boost_1_72_0
+./bootstrap.sh
+./b2
+```
+Edit  `EIRES/src/EIRES_bushfire/Makefile`, update flags `BOOST` and `BOOSTLD` with the path in your machine. 
+
 #### Compile
 ```
 cd EIRES
