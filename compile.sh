@@ -2,7 +2,7 @@ cd src/EIRES_bushfire
 mkdir bin
 make
 
-cd ../EIRES_google_cluster_monitorin
+cd ../EIRES_google_cluster_monitoring
 mkdir bin
 make
 
