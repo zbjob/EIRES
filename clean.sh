@@ -13,6 +13,11 @@ make clean
 cd ../EIRES_tune_weight
 make clean
 
+cd ../EIRES_BL3_greedy
+make clean
+
+cd ../EIRES_BL3_non-greedy
+
 cd ../../
 rm run/*.csv
 rm run/*.txt

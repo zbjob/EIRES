@@ -17,3 +17,11 @@ make
 cd ../EIRES_tune_weight
 mkdir bin
 make
+
+cd ../EIRES_BL3_greedy
+mkdir bin
+make
+
+cd ../EIRES_BL3_non-greedy
+mkdir bin
+make

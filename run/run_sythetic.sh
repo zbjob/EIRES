@@ -73,5 +73,3 @@ for i in `seq 1 2 9`
 do
    ../src/EIRES_tune_weight/bin/cep_match -F ../data/sythetic_datasets/Stream_uniform_500K.csv -c ./sythetic.eql -q P2 -n Tune_weight_cache_"$i" -D 100000 -f 5 -C 5000 -Z 30 -L 10 -u 2000 -A -B -s -w 0."$i"
 done
-
-
