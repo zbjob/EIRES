@@ -83,7 +83,7 @@ kincade.csv
 ```
 #### Google cluster monitoring datasets
 Google cluster monitoring traces are very well defined.
-Full datasets and descriptions are publicly available at https://github.com/google/cluster-data. Due to limited capacity, we pushed a small sample, `data/google_cluster_monitoring_datasets/sample_event_stream.dat.gz`.
+Full datasets and descriptions are publicly available at https://github.com/google/cluster-data/blob/master/ClusterData2011_2.md. Due to limited capacity, we pushed a small sample, `data/google_cluster_monitoring_datasets/sample_event_stream.dat.gz`.
 
 ---
 
