@@ -659,12 +659,12 @@ int main(int _argc, char* _argv[])
         eventCounter++;
 
 
-    string latencyFile = string("Latency_") + sheddingFlagName + ".csv"; 
+    string latencyFile = string("latency_") + sheddingFlagName + ".csv"; 
     prog.dumpLatencyBooking(latencyFile);
 
     prog.update_miner();
 
-    string runInforFile = "RunInfor_" + sheddingFlagName + ".txt";
+    string runInforFile = "results_" + sheddingFlagName + ".txt";
 
     ofstream runInforOutFile;
     runInforOutFile.open(runInforFile.c_str());
