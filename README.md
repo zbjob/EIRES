@@ -6,7 +6,7 @@ This work has been accepted by SIGMOD'21. An extended version of the paper can b
 * The compiler needs to support C++11 or higher. In Makefiles, the default compiler is set as g++.
 * Bushfire detection code requires `boost` library, especially `geometry`, to compute intersections of polygons among others. That is to compute overlap of geography boundaries over satellite event streams.  To run bushfire detection code, please configure a boost lib, https://www.boost.org/users/history/version_1_72_0.html.  Edit  `EIRES/src/EIRES_bushfire/Makefile`, update flags `BOOST` and `BOOSTLD` with the path in your machine. 
 * All running/configuration scripts are written for linux OS. Windows OS users need to change the paths accordingly (replace "/" with "\\").
-* We build parsers to parse query workloads from files. We define query workloads in files ending with `.eql`.  `run/sythetic.eql`, `run/bf-7.7_14.16.eql` and `google_cluster.eql` are query workloads for synthetic, day-time bushfire detection and google cluster monitoring respectively. 
+* We build parsers to parse query workloads from files. We define query workloads in files ending with `.eql`.  `run/synthetic.eql`, `run/bf-7.7_14.16.eql` and `google_cluster.eql` are query workloads for synthetic, day-time bushfire detection and google cluster monitoring respectively. 
 
 ## Download code and data
 We also provide compressed archive file for directly downloading. Please find the link [here](https://drive.google.com/file/d/1oC-MjfsoXmcbj7og-ll7L8zOHIa_dU5r/view?usp=sharing).
@@ -109,7 +109,7 @@ cd EIRES
 sh compile.sh
 ```
 #### Running
-we prepared scripts to run experiments of synthetic setting, bushfire detection and google cluster monitoring respectively.
+we prepared scripts to run experiments of synhetic setting, bushfire detection and google cluster monitoring respectively.
 Each script runs Baseline1, Baseline2, PFetch, FzEval and Hybrid for related queries and streams for 20 times.
 Latency and throughput measurement are monitored and dumped to files for later post analysis.
 
@@ -146,7 +146,7 @@ sh analyse_google_cluster.sh
 Following files will be generated. File names are self-explained. They cover latency and throughput for synthetic, bushfire and google cluster monitoring datasets
 ```
 cd run
-ls -ls *.dat
+ls -l *.dat
 
 result_latency_cost_greedy.dat
 result_latency_LRU_greedy.dat
@@ -155,6 +155,8 @@ result_latency_LRU_non_greedy.dat
 result_latency_estimation_noise.dat
 result_latency_cache_size.dat
 result_latency_transmission_latency.dat
+result_latency_weight_cache.dat
+result_latency_weight_fetch.dat
 
 result_throughput_cost_greedy.dat
 result_throughput_LRU_greedy.dat
