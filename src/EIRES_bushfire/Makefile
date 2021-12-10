@@ -1,7 +1,7 @@
 LDFLAGS = -lpthread 
 
-BOOST = -I /vol/home-vol2/pda/zhaobo/SIGMOD/EIRES/boost_1_72_0
-BOOSTLD = -L /vol/home-vol2/pda/zhaobo/SIGMOD/EIRES/boost_1_72_0/stage/lib
+BOOST = -I $${HOME}/EIRES/boost_1_72_0 
+BOOSTLD = -L $${HOME}/EIRES/boost_1_72_0/stage/lib
 
 CEP_OBJ = query/PatternMatcher.o query/Query.o  query/Cache_ordered.o query/FetchWorker.o _shared/PredicateMiner.o _shared/MurmurHash3.o _shared/MonitorThread.o utils/freegetopt/getopt.o query/lex/lex.yy.o
 CEP_MATCH_OBJ = $(CEP_OBJ) cep/cep_match.o
