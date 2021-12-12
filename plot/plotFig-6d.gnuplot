@@ -164,7 +164,7 @@ set size 2,2
 set yrange [0:6000]
 set ytics 0, 2000,6000 
 plot \
-'prefetch/branch-NFA/BL3/L.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_LRU_greedy_Q2.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 unset border 
@@ -178,7 +178,7 @@ set ytics auto
 set yrange [400000:3700000]
 set ytics 400000, 1000000, 3600000 
 plot \
-'prefetch/branch-NFA/BL3/L.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_LRU_greedy_Q2.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 unset multiplot

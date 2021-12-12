@@ -159,7 +159,7 @@ set size 2,1.5
 set yrange [0:1200]
 set ytics 0, 300, 1200
 plot \
-'prefetch/general_exmaples/latency_L_LB3.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_LRU_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 
@@ -174,7 +174,7 @@ set ytics auto
 set yrange [7000:55000]
 set ytics 10000, 10000, 55000
 plot \
-'prefetch/general_exmaples/latency_L_LB3.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_LRU_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 unset multiplot

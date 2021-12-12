@@ -135,7 +135,7 @@ set ytics 0, 200, 1000
 set yrange [0:1100]
 
 plot \
-'prefetch/tune_weight/cache.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_weight_cache.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 @CLEAR
 
@@ -154,7 +154,7 @@ set ytics 0, 200, 800
 set yrange [0:800]
 
 plot \
-'prefetch/tune_weight/fetch.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_weight_fetch.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 @CLEAR
 
@@ -174,7 +174,7 @@ set ytics("0" 0, "50" 50000, "100" 100000, "150" 150000, "200" 200000)
 set yrange [0:200000]
 
 plot \
-'prefetch/bush-fire-results/bushfire_BL3.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_bushfire.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 @CLEAR
 
@@ -250,7 +250,7 @@ set format y @scientificNotation
 set yrange [0:40000]
 
 plot \
-'prefetch/google_cluster/google_cluster_BL3.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_google_cluster.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 unset border                         
@@ -266,7 +266,7 @@ set ytics 50000, 1000000, 3700000
 #set format y @scientificNotation
 set ytics("500" 500000, "1500" 1500000, "2500" 2500000, "3500" 3500000) 
 plot \
-'prefetch/google_cluster/google_cluster_BL3.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_google_cluster.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 unset multiplot
 @CLEAR
@@ -288,7 +288,7 @@ set format y @scientificNotation
 set yrange [0:100000]
 
 plot \
-'prefetch/throughput/BL3/CC.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_throughput_cost_non_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 @CLEAR
 
@@ -306,6 +306,6 @@ set format y @scientificNotation
 set yrange [0:100000]
 
 plot \
-'prefetch/throughput/BL3/LC.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_throughput_LRU_non_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 @CLEAR

@@ -152,11 +152,11 @@ set key inside vertical top right
 
 
 plot \
-'prefetch/general_exmaples/cache_size/Pfetch.dat' using ($1-200):($6):($5):($9):($8) with candlesticks @PFetchBox, \
+'result_latency_cache_size_PFetch.dat' using ($1-200):($6):($5):($9):($8) with candlesticks @PFetchBox, \
 '' using ($1-200):($7):($7):($7):($7) with candlesticks ls FetchLine notitle, \
-'prefetch/general_exmaples/cache_size/LzEval.dat' using ($1):($6):($5):($9):($8) with candlesticks @LzEvalBox, \
+'result_latency_cache_size_LzEval.dat' using ($1):($6):($5):($9):($8) with candlesticks @LzEvalBox, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls FetchLine notitle, \
-'prefetch/general_exmaples/cache_size/Hybrid.dat' using ($1+200):($6):($5):($9):($8) with candlesticks @HybridFetchBox, \
+'result_latency_cache_size_Hybrid.dat' using ($1+200):($6):($5):($9):($8) with candlesticks @HybridFetchBox, \
 '' using ($1+200):($7):($7):($7):($7) with candlesticks ls FetchLine notitle
 @CLEAR
 
@@ -183,11 +183,11 @@ set key inside vertical top left
 
 
 plot \
-'prefetch/transimission_latency/P.dat' using ($1-200):($6):($5):($9):($8) with candlesticks @PFetchBox, \
+'result_latency_transmission_latency_PFetch.dat' using ($1-200):($6):($5):($9):($8) with candlesticks @PFetchBox, \
 '' using ($1-200):($7):($7):($7):($7) with candlesticks ls FetchLine notitle,\
-'prefetch/transimission_latency/L.dat' using ($1):($6):($5):($9):($8) with candlesticks @LzEvalBox, \
+'result_latency_transmission_latency_LzEval.dat' using ($1):($6):($5):($9):($8) with candlesticks @LzEvalBox, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls FetchLine notitle, \
-'prefetch/transimission_latency/H.dat' using ($1+200):($6):($5):($9):($8) with candlesticks @HybridFetchBox, \
+'result_latency_transmission_latency_Hybrid.dat' using ($1+200):($6):($5):($9):($8) with candlesticks @HybridFetchBox, \
 '' using ($1+200):($7):($7):($7):($7) with candlesticks ls FetchLine notitle
 @CLEAR
 
@@ -213,11 +213,11 @@ set key inside vertical top left
 
 
 plot \
-'prefetch/UtilQuality/P.dat' using ($1-200):($6):($5):($9):($8) with candlesticks @PFetchBox, \
+'result_latency_estimation_noise_PFetch.dat' using ($1-200):($6):($5):($9):($8) with candlesticks @PFetchBox, \
 '' using ($1-200):($7):($7):($7):($7) with candlesticks ls FetchLine notitle, \
-'prefetch/UtilQuality/L.dat' using ($1):($6):($5):($9):($8) with candlesticks @LzEvalBox, \
+'result_latency_estimation_noise_LzEval.dat' using ($1):($6):($5):($9):($8) with candlesticks @LzEvalBox, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls FetchLine notitle, \
-'prefetch/UtilQuality/H.dat' using ($1+200):($6):($5):($9):($8) with candlesticks @HybridFetchBox, \
+'result_latency_estimation_noise_Hybrid.dat' using ($1+200):($6):($5):($9):($8) with candlesticks @HybridFetchBox, \
 '' using ($1+200):($7):($7):($7):($7) with candlesticks ls FetchLine notitle
 @CLEAR
 
@@ -244,14 +244,14 @@ set ytics 0, 200, 900
 set origin 0,0
 set size 2,3
 plot \
-'prefetch/general_exmaples/latency_CC_LB3.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_cost_non_greedy.dat' using ($1):($6):($):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 
 set output "bin_prefetch/Figure5b.eps"
 set size 2,3
 plot \
-'prefetch/general_exmaples/latency_LC_LB3.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_LRU_non_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 
@@ -268,7 +268,7 @@ set size 2,1.5
 set yrange [0:1200]
 set ytics 0, 300, 12000
 plot \
-'prefetch/general_exmaples/latency_C_LB3.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_cost_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 
@@ -283,7 +283,7 @@ set ytics auto
 set yrange [7000:55000]
 set ytics 10000, 10000, 55000 
 plot \
-'prefetch/general_exmaples/latency_C_LB3.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_cost_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 unset multiplot
@@ -318,7 +318,7 @@ set ytics 0, 300, 900
 set origin 0,0
 set size 2,3
 plot \
-'prefetch/branch-NFA/BL3/CC.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_cost_non_greedy_Q2.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 
@@ -326,7 +326,7 @@ set output "bin_prefetch/Figure6b.eps"
 set origin 0,0
 set size 2,3
 plot \
-'prefetch/branch-NFA/BL3/LC.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_LRU_non_greedy_Q2.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 set yrange [0:12000] 
@@ -342,7 +342,7 @@ set ylabel "Latency ({/Symbol:Bold \155}s)" offset 0,2.8,0
 set yrange [0:6000]
 set ytics 0, 2000, 6000 
 plot \
-'prefetch/branch-NFA/BL3/C.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_cost_greedy_Q2.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 
@@ -357,7 +357,7 @@ set ytics auto
 set yrange [400000:3700000]
 set ytics 400000, 1000000, 3600000 
 plot \
-'prefetch/branch-NFA/BL3/C.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_cost_greedy_Q2.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 unset multiplot
 @CLEAR
