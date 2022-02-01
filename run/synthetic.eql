@@ -55,11 +55,11 @@ RETURN GReturn3(a.timestamp, a.event_id, a.v1, a.v2, b.v1, d.v1);
 QUERY P5
 EVENT SEQ(A a, B b, C c, D d)
 WHERE a.v1==b.v1
-WITHIN 1s  
+WITHIN 5ms  
 RETURN GReturn3(a.timestamp, a.event_id, a.v1, a.v2, b.v1, c.v1);
 
 QUERY P6
 EVENT SEQ(A a, C b, B c)
 WHERE a.v1==b.v1
-WITHIN 1s 
+WITHIN 5ms 
 RETURN GReturn3(a.timestamp, a.event_id, a.v1, a.v2, b.v1, c.v1);
