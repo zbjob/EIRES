@@ -1407,7 +1407,7 @@ public:
 		for (auto it : m_OutEventAttrSrc)
         {
 			*outattr_it++ = _attributes[it];
-            cout << *outattr_it << " " << flush;
+            //cout << *outattr_it << " " << flush;
         }
         
         cout << endl;
