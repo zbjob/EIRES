@@ -18,8 +18,3 @@ make clean
 
 cd ../EIRES_BL3_non-greedy
 make clean
-
-cd ../../
-rm run/*.csv
-rm run/*.txt
-rm run/*.dat
