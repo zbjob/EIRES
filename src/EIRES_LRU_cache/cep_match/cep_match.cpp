@@ -1410,7 +1410,7 @@ public:
 			*outattr_it++ = _attributes[it];
             //cout << *outattr_it << " " << flush;
         }
-        cout << endl;
+        //cout << endl;
 
         uint64_t la = _attributes[Query::DA_FULL_MATCH_TIME] - _attributes[Query::DA_CURRENT_TIME]; 
         m_RealTimeLatency = la;
