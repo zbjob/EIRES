@@ -146,7 +146,7 @@ do
     python process-latency.py latency_LzEval_non_greedy_LRU_Q2_"$j"run.csv 5 "$j" >> result_latency_LRU_non_greedy_Q2.dat
 
     python process-latency.py latency_Hybrid_greedy_Q2_"$j"run.csv 6 "$j" >> result_latency_cost_greedy_Q2.dat
-    python process-latency.py latency_Hybrid_non_greedy_Q2_"$j"run.csv 6 "$j" >> result_latency_cost_non_greedy _Q2.dat
+    python process-latency.py latency_Hybrid_non_greedy_Q2_"$j"run.csv 6 "$j" >> result_latency_cost_non_greedy_Q2.dat
     python process-latency.py latency_Hybrid_greedy_LRU_Q2_"$j"run.csv 6 "$j" >> result_latency_LRU_greedy_Q2.dat
     python process-latency.py latency_Hybrid_non_greedy_LRU_Q2_"$j"run.csv 6 "$j" >> result_latency_LRU_non_greedy_Q2.dat
 
