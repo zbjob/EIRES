@@ -9,7 +9,6 @@ do
 
     ../src/EIRES_LRU_cache/bin/cep_match -F ../data/synthetic_datasets/Stream_uniform_500K.csv -c ./synthetic.eql -q P6 -n BL1_greedy_P6_"$j"run -D 100000 -f 5 -C 1 -Z 0 -L 10 -u 2000 -g -s -p throughput_BL1_greedy_P6_"$j"run.csv &
     ../src/EIRES_LRU_cache/bin/cep_match -F ../data/synthetic_datasets/Stream_uniform_500K.csv -c ./synthetic.eql -q P6 -n BL1_non_greedy_P6_"$j"run -D 100000 -f 5 -C 1 -Z 0 -L 10 -u 2000 -s -p throughput_BL1_non_greedy_P6_"$j"run.csv &
-    wait
 
     #baseline 2
     ../src/EIRES_cost_cache/bin/cep_match -F ../data/synthetic_datasets/Stream_uniform_500K.csv -c ./synthetic.eql -q P2 -n BL2_greedy_"$j"run -D 100000 -f 5 -C 2000 -Z 0 -L 10 -u 2000 -g -s -p throughput_BL2_greedy_"$j"run.csv &
@@ -26,7 +25,6 @@ do
     ../src/EIRES_cost_cache/bin/cep_match -F ../data/synthetic_datasets/Stream_uniform_500K.csv -c ./synthetic.eql -q P6 -n BL2_non_greedy_P6_"$j"run -D 100000 -f 5 -C 2000 -Z 0 -L 10 -u 2000 -s -p throughput_BL2_non_greedy_P6_"$j"run.csv &
     ../src/EIRES_LRU_cache/bin/cep_match -F ../data/synthetic_datasets/Stream_uniform_500K.csv -c ./synthetic.eql -q P6 -n BL2_greedy_LRU_P6_"$j"run -D 100000 -f 5 -C 2000 -Z 0 -L 10 -u 2000 -g -s -p throughput_BL2_greedy_LRU_P6_"$j"run.csv &
     ../src/EIRES_LRU_cache/bin/cep_match -F ../data/synthetic_datasets/Stream_uniform_500K.csv -c ./synthetic.eql -q P6 -n BL2_non_greedy_LRU_P6_"$j"run -D 100000 -f 5 -C 2000 -Z 0 -L 10 -u 2000 -s -p throughput_BL2_non_greedy_LRU_P6_"$j"run.csv &
-    wait
 
     #baseline 3
     ../src/EIRES_BL3_greedy/bin/cep_match -F ../data/synthetic_datasets/Stream_uniform_500K.csv -c ./synthetic.eql -q P2 -n BL3_greedy_"$j"run -D 100000 -f 5 -C 1-Z 0 -L 10 -u 2000  -s -p throughput_BL3_greedy_"$j"run.csv &
