@@ -95,29 +95,66 @@ do
     python process-latency.py latency_PFetch_greedy_"$j"run.csv 4 "$j" >> result_latency_cost_greedy.dat
     python process-throughput.py throughput_PFetch_greedy_"$j"run.csv 4 "$j" >> result_throughput_cost_greedy.dat
     python process-latency.py latency_PFetch_non_greedy_"$j"run.csv 4 "$j" >> result_latency_cost_non_greedy.dat
+
+    cat throughput_PFetch_non_greedy_"$j"run.csv > tmp.csv
+    cat tmp.csv >> throughput_PFetch_non_greedy_"$j"run.csv
     python process-throughput.py throughput_PFetch_non_greedy_"$j"run.csv 4 "$j" >> result_throughput_cost_non_greedy.dat
+
     python process-latency.py latency_PFetch_greedy_LRU_"$j"run.csv 4 "$j" >> result_latency_LRU_greedy.dat
+
+    cat throughput_PFetch_greedy_LRU_"$j"run.csv > tmp.csv
+    cat tmp.csv >> throughput_PFetch_greedy_LRU_"$j"run.csv
+
     python process-throughput.py throughput_PFetch_greedy_LRU_"$j"run.csv 4 "$j" >> result_throughput_LRU_greedy.dat
+
     python process-latency.py latency_PFetch_non_greedy_LRU_"$j"run.csv 4 "$j" >> result_latency_LRU_non_greedy.dat
+
+
+    cat throughput_PFetch_non_greedy_LRU_"$j"run.csv > tmp.csv
+    cat tmp.csv >> throughput_PFetch_non_greedy_LRU_"$j"run.csv
     python process-throughput.py throughput_PFetch_non_greedy_LRU_"$j"run.csv 4 "$j" >> result_throughput_LRU_non_greedy.dat
 
     python process-latency.py latency_LzEval_greedy_"$j"run.csv 5 "$j" >> result_latency_cost_greedy.dat
+
+    cat throughput_LzEval_greedy_"$j"run.csv > tmp.csv
+    cat tmp.csv >> throughput_LzEval_greedy_"$j"run.csv
     python process-throughput.py throughput_LzEval_greedy_"$j"run.csv 5 "$j" >> result_throughput_cost_greedy.dat
+
     python process-latency.py latency_LzEval_non_greedy_"$j"run.csv 5 "$j" >> result_latency_cost_non_greedy.dat
+
+    cat throughput_LzEval_non_greedy_"$j"run.csv > tmp.csv
+    cat tmp.csv >> throughput_LzEval_non_greedy_"$j"run.csv
     python process-throughput.py throughput_LzEval_non_greedy_"$j"run.csv 5 "$j" >> result_throughput_cost_non_greedy.dat
+
     python process-latency.py latency_LzEval_greedy_LRU_"$j"run.csv 5 "$j" >> result_latency_LRU_greedy.dat
+
+    cat throughput_LzEval_non_greedy_"$j"run.csv > tmp.csv
+    cat tmp.csv >> throughput_LzEval_non_greedy_"$j"run.csv
     python process-throughput.py throughput_LzEval_greedy_LRU_"$j"run.csv 5 "$j" >> result_throughput_LRU_greedy.dat
     python process-latency.py latency_LzEval_non_greedy_LRU_"$j"run.csv 5 "$j" >> result_latency_LRU_non_greedy.dat
+
+    cat throughput_LzEval_non_greedy_LRU_"$j"run.csv > tmp.csv
+    cat tmp.csv >> throughput_LzEval_non_greedy_LRU_"$j"run.csv
     python process-throughput.py throughput_LzEval_non_greedy_LRU_"$j"run.csv 5 "$j" >> result_throughput_LRU_non_greedy.dat
 
     python process-latency.py latency_Hybrid_greedy_"$j"run.csv 6 "$j" >> result_latency_cost_greedy.dat
     python process-throughput.py throughput_Hybrid_greedy_"$j"run.csv 6 "$j" >> result_throughput_cost_greedy.dat
     python process-latency.py latency_Hybrid_non_greedy_"$j"run.csv 6 "$j" >> result_latency_cost_non_greedy.dat
+
+
+    cat throughput_Hybrid_non_greedy_"$j"run.csv > tmp.csv
+    cat tmp.csv >> throughput_Hybrid_non_greedy_"$j"run.csv
     python process-throughput.py throughput_Hybrid_non_greedy_"$j"run.csv 6 "$j" >> result_throughput_cost_non_greedy.dat
+
     python process-latency.py latency_Hybrid_greedy_LRU_"$j"run.csv 6 "$j" >> result_latency_LRU_greedy.dat
     python process-throughput.py throughput_Hybrid_greedy_LRU_"$j"run.csv 6 "$j" >> result_throughput_LRU_greedy.dat
     python process-latency.py latency_Hybrid_non_greedy_LRU_"$j"run.csv 6 "$j" >> result_latency_LRU_non_greedy.dat
+
+    cat throughput_Hybrid_non_greedy_LRU_"$j"run.csv > tmp.csv
+    cat tmp.csv >> throughput_Hybrid_non_greedy_LRU_"$j"run.csv
     python process-throughput.py throughput_Hybrid_non_greedy_LRU_"$j"run.csv 6 "$j" >> result_throughput_LRU_non_greedy.dat
+
+    rm tmp.csv
 
 
     python process-latency.py latency_BL1_greedy_Q2_"$j"run.csv 1 "$j" >> result_latency_cost_greedy_Q2.dat
