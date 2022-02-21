@@ -1,21 +1,21 @@
-rm result_latency_cost_greedy.dat
-rm result_latency_LRU_greedy.dat
-rm result_latency_cost_non_greedy.dat
-rm result_latency_LRU_non_greedy.dat
-
-rm result_latency_estimation_noise.dat
-rm result_latency_cache_size.dat
-rm result_latency_transmission_latency.dat
-
-
-rm result_throughput_cost_greedy.dat
-rm result_throughput_LRU_greedy.dat
-rm result_throughput_cost_non_greedy.dat
-rm result_throughput_LRU_non_greedy.dat
-
-rm result_throughput_estimation_noise.dat
-rm result_throughput_cache_size.dat
-rm result_throughput_transmission_latency.dat
+#rm result_latency_cost_greedy.dat
+#rm result_latency_LRU_greedy.dat
+#rm result_latency_cost_non_greedy.dat
+#rm result_latency_LRU_non_greedy.dat
+#
+#rm result_latency_estimation_noise.dat
+#rm result_latency_cache_size.dat
+#rm result_latency_transmission_latency.dat
+#
+#
+#rm result_throughput_cost_greedy.dat
+#rm result_throughput_LRU_greedy.dat
+#rm result_throughput_cost_non_greedy.dat
+#rm result_throughput_LRU_non_greedy.dat
+#
+#rm result_throughput_estimation_noise.dat
+#rm result_throughput_cache_size.dat
+#rm result_throughput_transmission_latency.dat
 
 for j in `seq 1 $1`
 do
