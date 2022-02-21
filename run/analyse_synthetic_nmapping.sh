@@ -112,7 +112,7 @@ do
 
     python process-latency.py latency_Hybrid_greedy_"$j"run.csv 6 "$j" >> result_latency_cost_greedy.dat
     python process-throughput.py throughput_Hybrid_greedy_"$j"run.csv 6 "$j" >> result_throughput_cost_greedy.dat
-    python process-latency.py latency_Hybrid_non_greedy_"$j"run.csv 6 "$j" >> result_latency_cost_non_greedy .dat
+    python process-latency.py latency_Hybrid_non_greedy_"$j"run.csv 6 "$j" >> result_latency_cost_non_greedy.dat
     python process-throughput.py throughput_Hybrid_non_greedy_"$j"run.csv 6 "$j" >> result_throughput_cost_non_greedy.dat
     python process-latency.py latency_Hybrid_greedy_LRU_"$j"run.csv 6 "$j" >> result_latency_LRU_greedy.dat
     python process-throughput.py throughput_Hybrid_greedy_LRU_"$j"run.csv 6 "$j" >> result_throughput_LRU_greedy.dat
