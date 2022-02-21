@@ -244,7 +244,7 @@ set ytics 0, 200, 900
 set origin 0,0
 set size 2,3
 plot \
-'result_latency_cost_non_greedy.dat' using ($1):($6):($):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_cost_non_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
 
 
