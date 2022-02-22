@@ -9,3 +9,5 @@ do
     python process-latency.py latency_day_fire_LzEval_"$j"_run.csv 5 "$j" >> result_latency_bushfire.dat
     python process-latency.py latency_day_fire_Hybrid_"$j"_run.csv 6 "$j" >> result_latency_bushfire.dat
 done
+
+mv result_latency_bushfire.dat ../plot
