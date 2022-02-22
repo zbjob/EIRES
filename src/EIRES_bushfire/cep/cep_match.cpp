@@ -151,7 +151,7 @@ public:
         event.attributes[4] = attr_e(RawEvent.humidity);
         event.attributes[5] = attr_e(RawEvent.temperature);
 
-        cout << "!!!!! SatelliteEvent" << event.attributes[0] << event.attributes[5] << endl;
+        cout << "!!!!! SatelliteEvent" << event.attributes[4] << event.attributes[5] << endl;
         
         uint64_t t = 86400000000;
         uint64_t ts= 300000000;
