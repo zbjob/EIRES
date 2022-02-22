@@ -134,7 +134,6 @@ public:
 
         SatelliteEvent RawEvent;
 
-        cout << "!!!! " << RawEvent.humidity << endl;
         if(!RawEventQueue.empty())
         {
             RawEvent = RawEventQueue.front();
