@@ -81,6 +81,7 @@ public:
 		}
 
 		m_Query = !_queryName ? m_Definition.query((size_t)0) : m_Definition.query(_queryName);
+        cout << "!!!!!!!" << string(_queryName) << m_Query <<  endl;
 		if (!m_Query)
 		{
 			fprintf(stderr, "query not found");
