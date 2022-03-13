@@ -142,7 +142,7 @@ set ylabel "Latency ({/Symbol:Bold \155}s)"
 set xlabel "Cache size"
 
 set ytics auto 
-set yrange [0:2500]
+set yrange [0:8000]
 set xrange [500:5500] 
 set xtics 1000,1000,50000
 set xtics("1k" 1000, "2k" 2000, "3k" 3000, "4k" 4000, "5k" 5000)
@@ -203,7 +203,7 @@ set ylabel "Latency ({/Symbol:Bold \155}s)"
 set xlabel "Estimation noise ratio"
 
 set ytics auto 
-set yrange [0:2500]
+set yrange [0:6000]
 set xrange [500:5500] 
 set xtics 1000,1000,50000
 set xtics("10\%%" 1000, "30\%%" 2000, "50\%%" 3000, "70\%%" 4000, "90\%%" 5000)
@@ -265,8 +265,8 @@ unset border
 set origin 0,0
 set border 1+2+8
 set size 2,1.5
-set yrange [0:1200]
-set ytics 0, 300, 12000
+set yrange [0:3000]
+set ytics 0, 1000, 3000 
 plot \
 'result_latency_cost_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
@@ -280,8 +280,8 @@ set ylabel " "
 unset xlabel
 unset xtics
 set ytics auto
-set yrange [7000:55000]
-set ytics 10000, 10000, 55000 
+set yrange [7000:70000]
+set ytics 10000, 20000, 70000 
 plot \
 'result_latency_cost_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle

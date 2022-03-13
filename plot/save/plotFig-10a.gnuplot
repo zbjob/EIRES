@@ -14,8 +14,8 @@ set style line 6 lt -1 ps 8 pt 4  lw 15 lc rgb "magenta" # RPMS
 set style line 7 lt -1 ps 8 pt 3  lw 15 lc rgb "blue" # Pfetch 
 set style line 8 lt -1 ps 8 pt 8  lw 15 lc rgb "red" # Dfetch 
 
-set style line 25 lt -1 ps 8 pt 8  lw 20 lc rgb "black" #baseline1 
-set style line 26 lt -1 ps 8 pt 8  lw 15 lc rgb "gray" #baseline2 
+set style line 22 lt -1 ps 8 pt 8  lw 20 lc rgb "black" #baseline1 
+set style line 23 lt -1 ps 8 pt 8  lw 15 lc rgb "gray" #baseline2 
 
 set style line 9 lt -1 ps 6 pt 8  lw 20 lc rgb "blue" # event
 set style line 10 lt -1 ps 6 pt 14 lw 20 lc rgb "red" # PM 
@@ -37,13 +37,6 @@ set style line 18 lt -1 ps 8 pt 3  lw 15 lc rgb "dark-pink"  #Dblock
 set style line 20 lt -1  pt 1  lw 10 lc rgb "dark-green" #PD95pc
 set style line 21 dt  5  pt 1  lw 10 lc rgb "dark-green" #PD50pc
 
-set style line 22 dt 3 ps 8 pt 3  lw 15 lc rgb "black" # PFetch 
-set style line 23 lt 3 ps 8 pt 8  lw 15 lc rgb "black" # LzEval 
-
-set style line 24 lt -1 lw 15 lc rgb "black"  
-
-PFetch=22
-LzEval=23
 
 Precision=11
 Recall=12
@@ -52,8 +45,8 @@ Pfetch=7
 Dfetch=8
 PDfetch=5
 
-baseline1=25
-baseline2=26
+baseline1=22
+baseline2=23
 
 PfetchPM=7
 DfetchPM=8
@@ -75,12 +68,6 @@ RPMSBox="fs solid 1 lt -1 lw 6 lc rgb 'magenta'"
 SlISBox="fs solid 1 lt -1 lw 6 lc rgb 'green'"
 SlPMSBox="fs solid  1 lt -1 lw 6 lc rgb 'blue'"
 HybridBox="fs solid 1 lt -1 lw 6 lc rgb 'red'"
-
-
-PFetchBox="lt -1 lw 15 fs solid 0.6 title 'PFetch' whiskerbars"
-LzEvalBox="lt -1 lw 15 fs solid 0.3 title 'LzEval' whiskerbars"
-HybridFetchBox="lt -1 lw 15 title 'Hybrid' whiskerbars"
-FetchLine=24
 
 #IdxBox="fs pattern 0 lt -1 lw 6"
 #NoIdxBox="fs solid 0.5 lt -1 lw 6"
@@ -132,54 +119,22 @@ set terminal postscript eps color enhanced \"Helvetica\" 40; \
 set key font \",30\""
 
 
-
-set output "bin_prefetch/Figure5d.eps"
-set size 2,3
+################## Figure 10. Case studies.
+set output "bin_prefetch/Figure10a.eps"
+set size 2,2
 
 set border lw 10
 
-set ylabel "Latency ({/Symbol:Bold \155}s)" 
-set format y @scientificNotation
-set key inside vertical top right 
-
-
-set multiplot 
-set ylabel "Latency ({/Symbol:Bold \155}s)" offset 0,4.8,0
-set ytics auto 
+set ylabel "Latency (ms)"
 set xtic rotate by -30 scale 0
 set xrange [0:7] 
-set xtics("BL1" 1, "BL2" 2, "LB3" 3, "PFetch" 4, "LzEval" 5, "Hybrid" 6)
+set xtics("BL1" 1, "BL2" 2, "BL3" 3, "PFetch" 4, "LzEval" 5, "Hybrid" 6)
 set boxwidth 0.7 
+set ytics("0" 0, "50" 50000, "100" 100000, "150" 150000, "200" 200000) 
+#set format y @scientificNotation
+set yrange [0:200000]
 
-unset title
-unset border 
-set border 1+2+8
-set origin 0,0
-set size 2,1.5
-set yrange [0:1200]
-set ytics 0, 300, 1200
 plot \
-'result_latency_LRU_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
+'result_latency_bushfire.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
-
-
-unset border 
-set border 4+2+8
-set origin 0,1.5
-set size 2,1.5
-set ylabel " "
-unset xlabel
-unset xtics
-set ytics auto
-set yrange [7000:55000]
-set ytics 10000, 10000, 55000
-plot \
-'result_latency_LRU_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
-'' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
-
-unset multiplot
 @CLEAR
-
-set border lw 5 
-set border 1+4+2+8
-

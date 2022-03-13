@@ -130,9 +130,9 @@ set xlabel "Weight {/Symbol w} in Equation 5"
 set xrange [0:6] 
 set xtics("0.1" 1, "0.3" 2, "0.5" 3, "0.7" 4, "0.9" 5)
 set boxwidth 0.7 
-set ytics 0, 200, 1000
+set ytics 0, 500, 4000
 #set format y @scientificNotation
-set yrange [0:1100]
+set yrange [0:4000]
 
 plot \
 'result_latency_weight_cache.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
@@ -149,9 +149,9 @@ set xlabel "Weight {/Symbol w} in Equation 5"
 set xrange [0:6] 
 set xtics("0.1" 1, "0.3" 2, "0.5" 3, "0.7" 4, "0.9" 5)
 set boxwidth 0.7 
-set ytics 0, 200, 800 
+set ytics 0, 300, 1500 
 #set format y @scientificNotation
-set yrange [0:800]
+set yrange [0:1500]
 
 plot \
 'result_latency_weight_fetch.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
@@ -245,9 +245,11 @@ unset border
 set border 1+2+8                     
 set origin 0,0                       
 set size 2,1.45    
-set ytics("   0" 0, "10" 10000, "20" 20000, "30" 30000, "40" 40000) 
+#set ytics("   0" 0, "10" 10000, "20" 20000, "30" 30000, "40" 40000) 
+set ytics("   0" 0, "5" 5000, "10" 10000, "15" 15000, "20" 20000, "25" 25000) 
+#set ytics("   0" 0, "5" 5000, "10" 10000, "20" 20000, "30" 30000, "40" 40000) 
 set format y @scientificNotation
-set yrange [0:40000]
+set yrange [0:28000]
 
 plot \
 'result_latency_google_cluster.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
@@ -261,10 +263,11 @@ set ylabel " "
 unset xlabel                         
 unset xtics                          
 set ytics auto                       
-set yrange [50000:3700000]          
+#set yrange [50000:3700000]          
+set yrange [100000:1000000]          
 set ytics 50000, 1000000, 3700000 
 #set format y @scientificNotation
-set ytics("500" 500000, "1500" 1500000, "2500" 2500000, "3500" 3500000) 
+set ytics("100" 100000, "500" 500000, "1000" 1000000) 
 plot \
 'result_latency_google_cluster.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
 '' using ($1):($7):($7):($7):($7) with candlesticks ls baseline1 notitle
@@ -283,9 +286,9 @@ set xrange [0:7]
 set xtics("BL1" 1, "BL2" 2, "BL3" 3, "PFetch" 4, "LzEval" 5, "Hybrid" 6)
 set boxwidth 0.7 
 unset ytics
-set ytics 0, 20000, 100000
+set ytics 0, 20000, 80000
 set format y @scientificNotation
-set yrange [0:100000]
+set yrange [0:80000]
 
 plot \
 'result_throughput_cost_non_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
@@ -301,9 +304,9 @@ set xrange [0:7]
 set xtics("BL1" 1, "BL2" 2, "BL3" 3, "PFetch" 4, "LzEval" 5, "Hybrid" 6)
 set boxwidth 0.7 
 unset ytics
-set ytics 0, 20000, 100000
+set ytics 0, 20000, 80000
 set format y @scientificNotation
-set yrange [0:100000]
+set yrange [0:80000]
 
 plot \
 'result_throughput_LRU_non_greedy.dat' using ($1):($6):($5):($9):($8) with candlesticks ls baseline1 notitle whiskerbars, \
