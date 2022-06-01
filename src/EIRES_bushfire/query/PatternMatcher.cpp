@@ -282,8 +282,6 @@ void PatternMatcher::randomLoadShedding()
 }
 uint32_t PatternMatcher::event(uint32_t _typeId, const attr_e* _attributes)
 {
-
-    cout << "[Debug] in PatternMatcher::event()" << endl;
 	uint32_t matchCount = 0;
 
 	if(_attributes[0].i >= m_Timeout)
@@ -300,9 +298,6 @@ uint32_t PatternMatcher::event(uint32_t _typeId, const attr_e* _attributes)
 
 	for (State& state : m_States)
 		state.endTransaction();
-
-    cout << "[Debug] leave PatternMatcher::event()" << matchCount << endl;
-
 	return matchCount;
 }
 
