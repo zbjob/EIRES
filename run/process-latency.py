@@ -8,9 +8,9 @@ mbps = []
 filename = sys.argv[1]
 runNum = sys.argv[3]
 
-data    = np.loadtxt(filename, dtype=np.str, delimiter=",")
-latency = data[:,0].astype(np.float)
-cnt     = data[:,1].astype(np.int)
+data    = np.loadtxt(filename, dtype=str, delimiter=",")
+latency = data[:,0].astype(float)
+cnt     = data[:,1].astype(int)
 length  = len(latency);
 
 for index in range(length):
